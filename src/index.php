@@ -1,1 +1,2 @@
-"<?php echo 'H? th?ng qu?n ly b�n h�ng'; ?>" 
+<h1>Hệ thống quản lý bán hàng</h1>
+<p>Ứng dụng PHP đang hoạt động.</p>
