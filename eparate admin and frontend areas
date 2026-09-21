@@ -1,0 +1,2504 @@
+.env:1: trailing whitespace.
+[32m+[m[32mMYSQL_DATABASE=ql_banhang[m[41m[m
+.env:2: trailing whitespace.
+[32m+[m[32mMYSQL_USER=appuser[m[41m[m
+.env:3: trailing whitespace.
+[32m+[m[32mMYSQL_PASSWORD=apppassword[m[41m[m
+.env.example:1: trailing whitespace.
+[32m+[m[32mMYSQL_ROOT_PASSWORD=root[m[41m[m
+.env.example:2: trailing whitespace.
+[32m+[m[32mMYSQL_DATABASE=ql_banhang[m[41m[m
+.env.example:3: trailing whitespace.
+[32m+[m[32mMYSQL_USER=appuser[m[41m[m
+.gitignore:1: trailing whitespace.
+[32m+[m[32m# Local environment configuration[m[41m[m
+compose.yaml:1: trailing whitespace.
+[32m+[m[32mservices:[m[41m[m
+compose.yaml:2: trailing whitespace.
+[32m+[m[32m  web:[m[41m[m
+compose.yaml:3: trailing whitespace.
+[32m+[m[32m    build:[m[41m[m
+compose.yaml:4: trailing whitespace.
+[32m+[m[32m      context: .[m[41m[m
+compose.yaml:5: trailing whitespace.
+[32m+[m[32m      dockerfile: docker/php/Dockerfile[m[41m[m
+compose.yaml:6: trailing whitespace.
+[32m+[m[32m    ports:[m[41m[m
+compose.yaml:7: trailing whitespace.
+[32m+[m[32m      - "8080:80"[m[41m[m
+compose.yaml:8: trailing whitespace.
+[32m+[m[32m    volumes:[m[41m[m
+compose.yaml:9: trailing whitespace.
+[32m+[m[32m      - ./public:/var/www/html[m[41m[m
+compose.yaml:10: trailing whitespace.
+[32m+[m[32m      - ./src:/var/www/src[m[41m[m
+compose.yaml:11: trailing whitespace.
+[32m+[m[32m    environment:[m[41m[m
+compose.yaml:12: trailing whitespace.
+[32m+[m[32m      MYSQL_DATABASE: ${MYSQL_DATABASE}[m[41m[m
+compose.yaml:13: trailing whitespace.
+[32m+[m[32m      MYSQL_USER: ${MYSQL_USER}[m[41m[m
+compose.yaml:14: trailing whitespace.
+[32m+[m[32m      MYSQL_PASSWORD: ${MYSQL_PASSWORD}[m[41m[m
+compose.yaml:15: trailing whitespace.
+[32m+[m[32m    depends_on:[m[41m[m
+compose.yaml:16: trailing whitespace.
+[32m+[m[32m      - db[m[41m[m
+compose.yaml:17: trailing whitespace.
+[32m+[m[41m[m
+compose.yaml:18: trailing whitespace.
+[32m+[m[32m  db:[m[41m[m
+compose.yaml:19: trailing whitespace.
+[32m+[m[32m    image: mysql:8.4[m[41m[m
+compose.yaml:20: trailing whitespace.
+[32m+[m[32m    environment:[m[41m[m
+compose.yaml:21: trailing whitespace.
+[32m+[m[32m      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}[m[41m[m
+compose.yaml:22: trailing whitespace.
+[32m+[m[32m      MYSQL_DATABASE: ${MYSQL_DATABASE}[m[41m[m
+compose.yaml:23: trailing whitespace.
+[32m+[m[32m      MYSQL_USER: ${MYSQL_USER}[m[41m[m
+compose.yaml:24: trailing whitespace.
+[32m+[m[32m      MYSQL_PASSWORD: ${MYSQL_PASSWORD}[m[41m[m
+compose.yaml:25: trailing whitespace.
+[32m+[m[32m    volumes:[m[41m[m
+compose.yaml:26: trailing whitespace.
+[32m+[m[32m      - mysql_data:/var/lib/mysql[m[41m[m
+compose.yaml:27: trailing whitespace.
+[32m+[m[32m      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro[m[41m[m
+compose.yaml:28: trailing whitespace.
+[32m+[m[32m      - ./database/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro[m[41m[m
+compose.yaml:29: trailing whitespace.
+[32m+[m[41m[m
+compose.yaml:30: trailing whitespace.
+[32m+[m[32mvolumes:[m[41m[m
+database/schema.sql:1: trailing whitespace.
+[32m+[m[32mSET NAMES utf8mb4;[m[41m[m
+database/schema.sql:2: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:3: trailing whitespace.
+[32m+[m[32mCREATE TABLE categories ([m[41m[m
+database/schema.sql:4: trailing whitespace.
+[32m+[m[32m    CategoryID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:5: trailing whitespace.
+[32m+[m[32m    CategoryName VARCHAR(200) NOT NULL,[m[41m[m
+database/schema.sql:6: trailing whitespace.
+[32m+[m[32m    Description TEXT[m[41m[m
+database/schema.sql:7: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:8: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:9: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:10: trailing whitespace.
+[32m+[m[32mCREATE TABLE suppliers ([m[41m[m
+database/schema.sql:11: trailing whitespace.
+[32m+[m[32m    SupplierID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:12: trailing whitespace.
+[32m+[m[32m    SupplierName VARCHAR(200) NOT NULL,[m[41m[m
+database/schema.sql:13: trailing whitespace.
+[32m+[m[32m    ContactName VARCHAR(100),[m[41m[m
+database/schema.sql:14: trailing whitespace.
+[32m+[m[32m    Address VARCHAR(200),[m[41m[m
+database/schema.sql:15: trailing whitespace.
+[32m+[m[32m    City VARCHAR(100),[m[41m[m
+database/schema.sql:16: trailing whitespace.
+[32m+[m[32m    PostalCode VARCHAR(20),[m[41m[m
+database/schema.sql:17: trailing whitespace.
+[32m+[m[32m    Country VARCHAR(100),[m[41m[m
+database/schema.sql:18: trailing whitespace.
+[32m+[m[32m    Phone VARCHAR(20)[m[41m[m
+database/schema.sql:19: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:20: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:21: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:22: trailing whitespace.
+[32m+[m[32mCREATE TABLE customers ([m[41m[m
+database/schema.sql:23: trailing whitespace.
+[32m+[m[32m    CustomerID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:24: trailing whitespace.
+[32m+[m[32m    CustomerName VARCHAR(100) NOT NULL,[m[41m[m
+database/schema.sql:25: trailing whitespace.
+[32m+[m[32m    ContactName VARCHAR(100),[m[41m[m
+database/schema.sql:26: trailing whitespace.
+[32m+[m[32m    Address VARCHAR(200),[m[41m[m
+database/schema.sql:27: trailing whitespace.
+[32m+[m[32m    City VARCHAR(100),[m[41m[m
+database/schema.sql:28: trailing whitespace.
+[32m+[m[32m    PostalCode VARCHAR(20),[m[41m[m
+database/schema.sql:29: trailing whitespace.
+[32m+[m[32m    Country VARCHAR(100)[m[41m[m
+database/schema.sql:30: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:31: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:32: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:33: trailing whitespace.
+[32m+[m[32mCREATE TABLE employees ([m[41m[m
+database/schema.sql:34: trailing whitespace.
+[32m+[m[32m    EmployeeID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:35: trailing whitespace.
+[32m+[m[32m    LastName VARCHAR(50) NOT NULL,[m[41m[m
+database/schema.sql:36: trailing whitespace.
+[32m+[m[32m    FirstName VARCHAR(50) NOT NULL,[m[41m[m
+database/schema.sql:37: trailing whitespace.
+[32m+[m[32m    BirthDate DATE,[m[41m[m
+database/schema.sql:38: trailing whitespace.
+[32m+[m[32m    Photo VARCHAR(255),[m[41m[m
+database/schema.sql:39: trailing whitespace.
+[32m+[m[32m    Notes TEXT[m[41m[m
+database/schema.sql:40: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:41: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:42: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:43: trailing whitespace.
+[32m+[m[32mCREATE TABLE shippers ([m[41m[m
+database/schema.sql:44: trailing whitespace.
+[32m+[m[32m    ShipperID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:45: trailing whitespace.
+[32m+[m[32m    ShipperName VARCHAR(100) NOT NULL,[m[41m[m
+database/schema.sql:46: trailing whitespace.
+[32m+[m[32m    Phone VARCHAR(20)[m[41m[m
+database/schema.sql:47: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:48: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:49: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:50: trailing whitespace.
+[32m+[m[32mCREATE TABLE products ([m[41m[m
+database/schema.sql:51: trailing whitespace.
+[32m+[m[32m    ProductID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:52: trailing whitespace.
+[32m+[m[32m    ProductCode VARCHAR(50) NOT NULL UNIQUE,[m[41m[m
+database/schema.sql:53: trailing whitespace.
+[32m+[m[32m    ProductName VARCHAR(255) NOT NULL,[m[41m[m
+database/schema.sql:54: trailing whitespace.
+[32m+[m[32m    Description TEXT,[m[41m[m
+database/schema.sql:55: trailing whitespace.
+[32m+[m[32m    Unit VARCHAR(20),[m[41m[m
+database/schema.sql:56: trailing whitespace.
+[32m+[m[32m    Price DECIMAL(12,2) NOT NULL DEFAULT 0,[m[41m[m
+database/schema.sql:57: trailing whitespace.
+[32m+[m[32m    StockQuantity INT NOT NULL DEFAULT 0,[m[41m[m
+database/schema.sql:58: trailing whitespace.
+[32m+[m[32m    IsActive BOOLEAN NOT NULL DEFAULT TRUE,[m[41m[m
+database/schema.sql:59: trailing whitespace.
+[32m+[m[32m    SupplierID INT NOT NULL,[m[41m[m
+database/schema.sql:60: trailing whitespace.
+[32m+[m[32m    CategoryID INT NOT NULL,[m[41m[m
+database/schema.sql:61: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:62: trailing whitespace.
+[32m+[m[32m    CONSTRAINT chk_products_price CHECK (Price >= 0),[m[41m[m
+database/schema.sql:63: trailing whitespace.
+[32m+[m[32m    CONSTRAINT chk_products_stock CHECK (StockQuantity >= 0),[m[41m[m
+database/schema.sql:64: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_products_supplier[m[41m[m
+database/schema.sql:65: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (SupplierID) REFERENCES suppliers(SupplierID),[m[41m[m
+database/schema.sql:66: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_products_category[m[41m[m
+database/schema.sql:67: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (CategoryID) REFERENCES categories(CategoryID)[m[41m[m
+database/schema.sql:68: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:69: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:70: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:71: trailing whitespace.
+[32m+[m[32mCREATE TABLE product_images ([m[41m[m
+database/schema.sql:72: trailing whitespace.
+[32m+[m[32m    ProductImageID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:73: trailing whitespace.
+[32m+[m[32m    ProductID INT NOT NULL,[m[41m[m
+database/schema.sql:74: trailing whitespace.
+[32m+[m[32m    ImageFile VARCHAR(255) NOT NULL,[m[41m[m
+database/schema.sql:75: trailing whitespace.
+[32m+[m[32m    AltText VARCHAR(255),[m[41m[m
+database/schema.sql:76: trailing whitespace.
+[32m+[m[32m    IsPrimary BOOLEAN NOT NULL DEFAULT FALSE,[m[41m[m
+database/schema.sql:77: trailing whitespace.
+[32m+[m[32m    SortOrder INT NOT NULL DEFAULT 0,[m[41m[m
+database/schema.sql:78: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:79: trailing whitespace.
+[32m+[m[32m    CONSTRAINT uq_product_image UNIQUE (ProductID, ImageFile),[m[41m[m
+database/schema.sql:80: trailing whitespace.
+[32m+[m[32m    CONSTRAINT chk_product_image_sort CHECK (SortOrder >= 0),[m[41m[m
+database/schema.sql:81: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_product_images_product[m[41m[m
+database/schema.sql:82: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (ProductID)[m[41m[m
+database/schema.sql:83: trailing whitespace.
+[32m+[m[32m        REFERENCES products(ProductID)[m[41m[m
+database/schema.sql:84: trailing whitespace.
+[32m+[m[32m        ON DELETE CASCADE[m[41m[m
+database/schema.sql:85: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:86: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:87: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:88: trailing whitespace.
+[32m+[m[32mCREATE TABLE orders ([m[41m[m
+database/schema.sql:89: trailing whitespace.
+[32m+[m[32m    OrderID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:90: trailing whitespace.
+[32m+[m[32m    OrderDate DATE NOT NULL,[m[41m[m
+database/schema.sql:91: trailing whitespace.
+[32m+[m[32m    CustomerID INT NOT NULL,[m[41m[m
+database/schema.sql:92: trailing whitespace.
+[32m+[m[32m    EmployeeID INT NOT NULL,[m[41m[m
+database/schema.sql:93: trailing whitespace.
+[32m+[m[32m    ShipperID INT NOT NULL,[m[41m[m
+database/schema.sql:94: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:95: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_orders_customer[m[41m[m
+database/schema.sql:96: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (CustomerID) REFERENCES customers(CustomerID),[m[41m[m
+database/schema.sql:97: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_orders_employee[m[41m[m
+database/schema.sql:98: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (EmployeeID) REFERENCES employees(EmployeeID),[m[41m[m
+database/schema.sql:99: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_orders_shipper[m[41m[m
+database/schema.sql:100: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (ShipperID) REFERENCES shippers(ShipperID)[m[41m[m
+database/schema.sql:101: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/schema.sql:102: trailing whitespace.
+[32m+[m[32m  COLLATE utf8mb4_unicode_ci;[m[41m[m
+database/schema.sql:103: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:104: trailing whitespace.
+[32m+[m[32mCREATE TABLE orderdetail ([m[41m[m
+database/schema.sql:105: trailing whitespace.
+[32m+[m[32m    OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,[m[41m[m
+database/schema.sql:106: trailing whitespace.
+[32m+[m[32m    Quantity INT NOT NULL,[m[41m[m
+database/schema.sql:107: trailing whitespace.
+[32m+[m[32m    UnitPrice DECIMAL(12,2) NOT NULL,[m[41m[m
+database/schema.sql:108: trailing whitespace.
+[32m+[m[32m    OrderID INT NOT NULL,[m[41m[m
+database/schema.sql:109: trailing whitespace.
+[32m+[m[32m    ProductID INT NOT NULL,[m[41m[m
+database/schema.sql:110: trailing whitespace.
+[32m+[m[41m[m
+database/schema.sql:111: trailing whitespace.
+[32m+[m[32m    CONSTRAINT chk_orderdetail_quantity CHECK (Quantity > 0),[m[41m[m
+database/schema.sql:112: trailing whitespace.
+[32m+[m[32m    CONSTRAINT chk_orderdetail_unitprice CHECK (UnitPrice >= 0),[m[41m[m
+database/schema.sql:113: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_orderdetail_order[m[41m[m
+database/schema.sql:114: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (OrderID)[m[41m[m
+database/schema.sql:115: trailing whitespace.
+[32m+[m[32m        REFERENCES orders(OrderID)[m[41m[m
+database/schema.sql:116: trailing whitespace.
+[32m+[m[32m        ON DELETE CASCADE,[m[41m[m
+database/schema.sql:117: trailing whitespace.
+[32m+[m[32m    CONSTRAINT fk_orderdetail_product[m[41m[m
+database/schema.sql:118: trailing whitespace.
+[32m+[m[32m        FOREIGN KEY (ProductID) REFERENCES products(ProductID)[m[41m[m
+database/schema.sql:119: trailing whitespace.
+[32m+[m[32m) CHARACTER SET utf8mb4[m[41m[m
+database/seed.sql:1: trailing whitespace.
+[32m+[m[32mSET NAMES utf8mb4;[m[41m[m
+database/seed.sql:2: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:3: trailing whitespace.
+[32m+[m[32mINSERT INTO categories (CategoryName, Description)[m[41m[m
+database/seed.sql:4: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:5: trailing whitespace.
+[32m+[m[32m    ('Điện thoại', 'Các sản phẩm điện thoại di động'),[m[41m[m
+database/seed.sql:6: trailing whitespace.
+[32m+[m[32m    ('Máy tính', 'Máy tính xách tay và máy tính để bàn'),[m[41m[m
+database/seed.sql:7: trailing whitespace.
+[32m+[m[32m    ('Phụ kiện', 'Phụ kiện dành cho thiết bị công nghệ');[m[41m[m
+database/seed.sql:8: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:9: trailing whitespace.
+[32m+[m[32mINSERT INTO suppliers[m[41m[m
+database/seed.sql:10: trailing whitespace.
+[32m+[m[32m    (SupplierName, ContactName, Address, City, PostalCode, Country, Phone)[m[41m[m
+database/seed.sql:11: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:12: trailing whitespace.
+[32m+[m[32m    ('Công ty Công nghệ ABC', 'Nguyễn Văn An',[m[41m[m
+database/seed.sql:13: trailing whitespace.
+[32m+[m[32m     '01 Nguyễn Huệ', 'TP. Hồ Chí Minh', '700000', 'Việt Nam', '0901234567'),[m[41m[m
+database/seed.sql:14: trailing whitespace.
+[32m+[m[32m    ('Công ty Thiết bị XYZ', 'Trần Minh Bình',[m[41m[m
+database/seed.sql:15: trailing whitespace.
+[32m+[m[32m     '25 Lê Lợi', 'Đà Nẵng', '550000', 'Việt Nam', '0912345678');[m[41m[m
+database/seed.sql:16: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:17: trailing whitespace.
+[32m+[m[32mINSERT INTO customers[m[41m[m
+database/seed.sql:18: trailing whitespace.
+[32m+[m[32m    (CustomerName, ContactName, Address, City, PostalCode, Country)[m[41m[m
+database/seed.sql:19: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:20: trailing whitespace.
+[32m+[m[32m    ('Nguyễn Minh Anh', 'Nguyễn Minh Anh',[m[41m[m
+database/seed.sql:21: trailing whitespace.
+[32m+[m[32m     '12 Nguyễn Trãi', 'TP. Hồ Chí Minh', '700000', 'Việt Nam'),[m[41m[m
+database/seed.sql:22: trailing whitespace.
+[32m+[m[32m    ('Trần Thanh Hà', 'Trần Thanh Hà',[m[41m[m
+database/seed.sql:23: trailing whitespace.
+[32m+[m[32m     '35 Hùng Vương', 'Cần Thơ', '900000', 'Việt Nam'),[m[41m[m
+database/seed.sql:24: trailing whitespace.
+[32m+[m[32m    ('Lê Quốc Bảo', 'Lê Quốc Bảo',[m[41m[m
+database/seed.sql:25: trailing whitespace.
+[32m+[m[32m     '18 Lê Lợi', 'Trà Vinh', '870000', 'Việt Nam');[m[41m[m
+database/seed.sql:26: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:27: trailing whitespace.
+[32m+[m[32mINSERT INTO employees[m[41m[m
+database/seed.sql:28: trailing whitespace.
+[32m+[m[32m    (LastName, FirstName, BirthDate, Photo, Notes)[m[41m[m
+database/seed.sql:29: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:30: trailing whitespace.
+[32m+[m[32m    ('Nguyễn', 'Hoàng Nam', '1995-05-15', NULL, 'Nhân viên bán hàng'),[m[41m[m
+database/seed.sql:31: trailing whitespace.
+[32m+[m[32m    ('Trần', 'Thúy An', '1997-09-20', NULL, 'Nhân viên chăm sóc khách hàng');[m[41m[m
+database/seed.sql:32: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:33: trailing whitespace.
+[32m+[m[32mINSERT INTO shippers (ShipperName, Phone)[m[41m[m
+database/seed.sql:34: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:35: trailing whitespace.
+[32m+[m[32m    ('Giao hàng nhanh', '19001001'),[m[41m[m
+database/seed.sql:36: trailing whitespace.
+[32m+[m[32m    ('Giao hàng tiết kiệm', '19001002');[m[41m[m
+database/seed.sql:37: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:38: trailing whitespace.
+[32m+[m[32mINSERT INTO products[m[41m[m
+database/seed.sql:39: trailing whitespace.
+[32m+[m[32m    (ProductCode, ProductName, Description, Unit, Price,[m[41m[m
+database/seed.sql:40: trailing whitespace.
+[32m+[m[32m     StockQuantity, IsActive, SupplierID, CategoryID)[m[41m[m
+database/seed.sql:41: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:42: trailing whitespace.
+[32m+[m[32m    ('SP001', 'Điện thoại Smartphone A',[m[41m[m
+database/seed.sql:43: trailing whitespace.
+[32m+[m[32m     'Điện thoại thông minh màn hình lớn, phù hợp nhu cầu sử dụng hằng ngày.',[m[41m[m
+database/seed.sql:44: trailing whitespace.
+[32m+[m[32m     'Chiếc', 8500000.00, 20, TRUE, 1, 1),[m[41m[m
+database/seed.sql:45: trailing whitespace.
+[32m+[m[32m    ('SP002', 'Laptop B',[m[41m[m
+database/seed.sql:46: trailing whitespace.
+[32m+[m[32m     'Máy tính xách tay phục vụ học tập và làm việc.',[m[41m[m
+database/seed.sql:47: trailing whitespace.
+[32m+[m[32m     'Chiếc', 18500000.00, 10, TRUE, 2, 2),[m[41m[m
+database/seed.sql:48: trailing whitespace.
+[32m+[m[32m    ('SP003', 'Chuột không dây C',[m[41m[m
+database/seed.sql:49: trailing whitespace.
+[32m+[m[32m     'Chuột không dây nhỏ gọn, kết nối ổn định.',[m[41m[m
+database/seed.sql:50: trailing whitespace.
+[32m+[m[32m     'Chiếc', 450000.00, 50, TRUE, 2, 3);[m[41m[m
+database/seed.sql:51: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:52: trailing whitespace.
+[32m+[m[32mINSERT INTO product_images[m[41m[m
+database/seed.sql:53: trailing whitespace.
+[32m+[m[32m    (ProductID, ImageFile, AltText, IsPrimary, SortOrder)[m[41m[m
+database/seed.sql:54: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:55: trailing whitespace.
+[32m+[m[32m    (1, 'phone-a-1.jpg', 'Điện thoại Smartphone A - ảnh chính', TRUE, 1),[m[41m[m
+database/seed.sql:56: trailing whitespace.
+[32m+[m[32m    (1, 'phone-a-2.jpg', 'Điện thoại Smartphone A - mặt sau', FALSE, 2),[m[41m[m
+database/seed.sql:57: trailing whitespace.
+[32m+[m[32m    (2, 'laptop-b-1.jpg', 'Laptop B - ảnh chính', TRUE, 1),[m[41m[m
+database/seed.sql:58: trailing whitespace.
+[32m+[m[32m    (3, 'mouse-c-1.jpg', 'Chuột không dây C - ảnh chính', TRUE, 1);[m[41m[m
+database/seed.sql:59: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:60: trailing whitespace.
+[32m+[m[32mINSERT INTO orders (OrderDate, CustomerID, EmployeeID, ShipperID)[m[41m[m
+database/seed.sql:61: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:62: trailing whitespace.
+[32m+[m[32m    ('2026-08-10', 1, 1, 1),[m[41m[m
+database/seed.sql:63: trailing whitespace.
+[32m+[m[32m    ('2026-08-11', 2, 2, 2),[m[41m[m
+database/seed.sql:64: trailing whitespace.
+[32m+[m[32m    ('2026-08-12', 3, 1, 1);[m[41m[m
+database/seed.sql:65: trailing whitespace.
+[32m+[m[41m[m
+database/seed.sql:66: trailing whitespace.
+[32m+[m[32mINSERT INTO orderdetail (Quantity, UnitPrice, OrderID, ProductID)[m[41m[m
+database/seed.sql:67: trailing whitespace.
+[32m+[m[32mVALUES[m[41m[m
+database/seed.sql:68: trailing whitespace.
+[32m+[m[32m    (1, 8500000.00, 1, 1),[m[41m[m
+database/seed.sql:69: trailing whitespace.
+[32m+[m[32m    (2, 450000.00, 1, 3),[m[41m[m
+database/seed.sql:70: trailing whitespace.
+[32m+[m[32m    (1, 18500000.00, 2, 2),[m[41m[m
+docker/php/Dockerfile:1: trailing whitespace.
+[32m+[m[32mFROM php:8.3-apache[m[41m[m
+docker/php/Dockerfile:2: trailing whitespace.
+[32m+[m[41m[m
+docker/php/Dockerfile:3: trailing whitespace.
+[32m+[m[32mRUN docker-php-ext-install mysqli[m[41m[m
+docker/php/Dockerfile:4: trailing whitespace.
+[32m+[m[41m[m
+public/admin/categories/index.php:91: trailing whitespace.
+[32m+[m[41m                        [m
+public/admin/products/create.php:27: trailing whitespace.
+[32m+[m[41m        [m
+public/admin/products/create.php:102: trailing whitespace.
+[32m+[m[41m        [m
+public/admin/products/create.php:108: trailing whitespace.
+[32m+[m[32m<?php[m[41m [m
+public/admin/products/header.php:6: trailing whitespace.
+[32m+[m[41m    [m
+public/admin/products/header.php:7: trailing whitespace.
+[32m+[m[41m    [m
+public/admin/products/index.php:10: trailing whitespace.
+[32m+[m[32m    SELECT[m[41m [m
+public/admin/products/index.php:67: trailing whitespace.
+[32m+[m[32m                                <img src="/<?= ltrim(htmlspecialchars($product['ImagePath']), '/') ?>"[m[41m [m
+public/admin/products/index.php:68: trailing whitespace.
+[32m+[m[32m                                     alt="<?= htmlspecialchars($product['ProductName']) ?>"[m[41m [m
+public/admin/products/index.php:69: trailing whitespace.
+[32m+[m[32m                                     class="img-thumbnail"[m[41m [m
+public/admin/products/index.php:85: trailing whitespace.
+[32m+[m[41m                        [m
+public/admin/products/index.php:97: trailing whitespace.
+[32m+[m[32m                            <a href="/admin/products/edit.php?id=<?= $product['ProductID'] ?>"[m[41m [m
+public/admin/products/index.php:99: trailing whitespace.
+[32m+[m[41m                            [m
+public/admin/products/index.php:100: trailing whitespace.
+[32m+[m[32m                            <a href="/admin/products/delete.php?id=<?= $product['ProductID'] ?>"[m[41m [m
+public/admin/products/index.php:101: trailing whitespace.
+[32m+[m[32m                               class="btn btn-sm btn-danger"[m[41m [m
+public/admin/shippers/create.php:54: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/admin/shippers/create.php:55: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/admin/shippers/create.php:56: trailing whitespace.
+[32m+[m[32m                           id="ShipperName"[m[41m [m
+public/admin/shippers/create.php:57: trailing whitespace.
+[32m+[m[32m                           name="ShipperName"[m[41m [m
+public/admin/shippers/create.php:58: trailing whitespace.
+[32m+[m[32m                           placeholder="Ví dụ: Nguyễn Văn A, Giao Hàng Nhanh..."[m[41m [m
+public/admin/shippers/create.php:64: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/admin/shippers/create.php:65: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/admin/shippers/create.php:66: trailing whitespace.
+[32m+[m[32m                           id="Phone"[m[41m [m
+public/admin/shippers/create.php:67: trailing whitespace.
+[32m+[m[32m                           name="Phone"[m[41m [m
+public/admin/shippers/edit.php:70: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/admin/shippers/edit.php:71: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/admin/shippers/edit.php:72: trailing whitespace.
+[32m+[m[32m                           id="ShipperName"[m[41m [m
+public/admin/shippers/edit.php:73: trailing whitespace.
+[32m+[m[32m                           name="ShipperName"[m[41m [m
+public/admin/shippers/edit.php:74: trailing whitespace.
+[32m+[m[32m                           value="<?= htmlspecialchars($shipper['ShipperName']) ?>"[m[41m [m
+public/admin/shippers/edit.php:80: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/admin/shippers/edit.php:81: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/admin/shippers/edit.php:82: trailing whitespace.
+[32m+[m[32m                           id="Phone"[m[41m [m
+public/admin/shippers/edit.php:83: trailing whitespace.
+[32m+[m[32m                           name="Phone"[m[41m [m
+public/admin/shippers/index.php:10: trailing whitespace.
+[32m+[m[32m    SELECT[m[41m [m
+public/customers/create.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/customers/create.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Thêm Khách hàng mới';[m[41m[m
+public/customers/create.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/customers/create.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:6: trailing whitespace.
+[32m+[m[32m$error = '';[m[41m[m
+public/customers/create.php:7: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:8: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] === 'POST') {[m[41m[m
+public/customers/create.php:9: trailing whitespace.
+[32m+[m[32m    $customerName = trim($_POST['CustomerName'] ?? '');[m[41m[m
+public/customers/create.php:10: trailing whitespace.
+[32m+[m[32m    $contactName  = trim($_POST['ContactName'] ?? '');[m[41m[m
+public/customers/create.php:11: trailing whitespace.
+[32m+[m[32m    $address      = trim($_POST['Address'] ?? '');[m[41m[m
+public/customers/create.php:12: trailing whitespace.
+[32m+[m[32m    $city         = trim($_POST['City'] ?? '');[m[41m[m
+public/customers/create.php:13: trailing whitespace.
+[32m+[m[32m    $postalCode   = trim($_POST['PostalCode'] ?? '');[m[41m[m
+public/customers/create.php:14: trailing whitespace.
+[32m+[m[32m    $country      = trim($_POST['Country'] ?? '');[m[41m[m
+public/customers/create.php:15: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:16: trailing whitespace.
+[32m+[m[32m    if (!empty($customerName)) {[m[41m[m
+public/customers/create.php:17: trailing whitespace.
+[32m+[m[32m        $sql = "INSERT INTO customers (CustomerName, ContactName, Address, City, PostalCode, Country)[m[41m [m
+public/customers/create.php:18: trailing whitespace.
+[32m+[m[32m                VALUES (?, ?, ?, ?, ?, ?)";[m[41m[m
+public/customers/create.php:19: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:20: trailing whitespace.
+[32m+[m[32m        $stmt = $conn->prepare($sql);[m[41m[m
+public/customers/create.php:21: trailing whitespace.
+[32m+[m[32m        if ($stmt) {[m[41m[m
+public/customers/create.php:22: trailing whitespace.
+[32m+[m[32m            $stmt->bind_param('ssssss', $customerName, $contactName, $address, $city, $postalCode, $country);[m[41m[m
+public/customers/create.php:23: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:24: trailing whitespace.
+[32m+[m[32m            if ($stmt->execute()) {[m[41m[m
+public/customers/create.php:25: trailing whitespace.
+[32m+[m[32m                $stmt->close();[m[41m[m
+public/customers/create.php:26: trailing whitespace.
+[32m+[m[32m                header('Location: index.php');[m[41m[m
+public/customers/create.php:27: trailing whitespace.
+[32m+[m[32m                exit;[m[41m[m
+public/customers/create.php:28: trailing whitespace.
+[32m+[m[32m            } else {[m[41m[m
+public/customers/create.php:29: trailing whitespace.
+[32m+[m[32m                $error = 'Không thể thêm khách hàng vào cơ sở dữ liệu.';[m[41m[m
+public/customers/create.php:30: trailing whitespace.
+[32m+[m[32m            }[m[41m[m
+public/customers/create.php:31: trailing whitespace.
+[32m+[m[32m            $stmt->close();[m[41m[m
+public/customers/create.php:32: trailing whitespace.
+[32m+[m[32m        } else {[m[41m[m
+public/customers/create.php:33: trailing whitespace.
+[32m+[m[32m            $error = 'Lỗi câu lệnh cơ sở dữ liệu!';[m[41m[m
+public/customers/create.php:34: trailing whitespace.
+[32m+[m[32m        }[m[41m[m
+public/customers/create.php:35: trailing whitespace.
+[32m+[m[32m    } else {[m[41m[m
+public/customers/create.php:36: trailing whitespace.
+[32m+[m[32m        $error = 'Vui lòng nhập tên khách hàng!';[m[41m[m
+public/customers/create.php:37: trailing whitespace.
+[32m+[m[32m    }[m[41m[m
+public/customers/create.php:38: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/create.php:39: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:40: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/customers/create.php:41: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/customers/create.php:42: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/customers/create.php:43: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:44: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/customers/create.php:45: trailing whitespace.
+[32m+[m[32m    <div class="card shadow-sm">[m[41m[m
+public/customers/create.php:46: trailing whitespace.
+[32m+[m[32m        <div class="card-header bg-primary text-white">[m[41m[m
+public/customers/create.php:47: trailing whitespace.
+[32m+[m[32m            <h4 class="mb-0">Thêm Khách Hàng Mới</h4>[m[41m[m
+public/customers/create.php:48: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/customers/create.php:49: trailing whitespace.
+[32m+[m[32m        <div class="card-body">[m[41m[m
+public/customers/create.php:50: trailing whitespace.
+[32m+[m[32m            <?php if (!empty($error)): ?>[m[41m[m
+public/customers/create.php:51: trailing whitespace.
+[32m+[m[32m                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>[m[41m[m
+public/customers/create.php:52: trailing whitespace.
+[32m+[m[32m            <?php endif; ?>[m[41m[m
+public/customers/create.php:53: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:54: trailing whitespace.
+[32m+[m[32m            <form action="create.php" method="POST">[m[41m[m
+public/customers/create.php:55: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/customers/create.php:56: trailing whitespace.
+[32m+[m[32m                    <label for="CustomerName" class="form-label font-weight-bold">[m[41m[m
+public/customers/create.php:57: trailing whitespace.
+[32m+[m[32m                        Tên khách hàng <span class="text-danger">*</span>[m[41m[m
+public/customers/create.php:58: trailing whitespace.
+[32m+[m[32m                    </label>[m[41m[m
+public/customers/create.php:59: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/customers/create.php:60: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/customers/create.php:61: trailing whitespace.
+[32m+[m[32m                           id="CustomerName"[m[41m [m
+public/customers/create.php:62: trailing whitespace.
+[32m+[m[32m                           name="CustomerName"[m[41m [m
+public/customers/create.php:63: trailing whitespace.
+[32m+[m[32m                           placeholder="Ví dụ: Công ty TNHH A, Nguyễn Văn B..."[m[41m [m
+public/customers/create.php:64: trailing whitespace.
+[32m+[m[32m                           required>[m[41m[m
+public/customers/create.php:65: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/create.php:66: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:67: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/customers/create.php:68: trailing whitespace.
+[32m+[m[32m                    <label for="ContactName" class="form-label font-weight-bold">Tên người liên hệ</label>[m[41m[m
+public/customers/create.php:69: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/customers/create.php:70: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/customers/create.php:71: trailing whitespace.
+[32m+[m[32m                           id="ContactName"[m[41m [m
+public/customers/create.php:72: trailing whitespace.
+[32m+[m[32m                           name="ContactName"[m[41m [m
+public/customers/create.php:73: trailing whitespace.
+[32m+[m[32m                           placeholder="Ví dụ: Trần Thị C">[m[41m[m
+public/customers/create.php:74: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/create.php:75: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:76: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/customers/create.php:77: trailing whitespace.
+[32m+[m[32m                    <label for="Address" class="form-label font-weight-bold">Địa chỉ</label>[m[41m[m
+public/customers/create.php:78: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m[m
+public/customers/create.php:79: trailing whitespace.
+[32m+[m[32m                    class="form-control"[m[41m [m
+public/customers/create.php:80: trailing whitespace.
+[32m+[m[32m                           id="Address"[m[41m [m
+public/customers/create.php:81: trailing whitespace.
+[32m+[m[32m                           name="Address"[m[41m [m
+public/customers/create.php:82: trailing whitespace.
+[32m+[m[32m                           placeholder="Ví dụ: 123 Đường Nguyễn Huệ">[m[41m[m
+public/customers/create.php:83: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/create.php:84: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:85: trailing whitespace.
+[32m+[m[32m                <div class="row">[m[41m[m
+public/customers/create.php:86: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3">[m[41m[m
+public/customers/create.php:87: trailing whitespace.
+[32m+[m[32m                        <label for="City" class="form-label font-weight-bold">Thành phố</label>[m[41m[m
+public/customers/create.php:88: trailing whitespace.
+[32m+[m[32m                        <input type="text"[m[41m [m
+public/customers/create.php:89: trailing whitespace.
+[32m+[m[32m                               class="form-control"[m[41m [m
+public/customers/create.php:90: trailing whitespace.
+[32m+[m[32m                               id="City"[m[41m [m
+public/customers/create.php:91: trailing whitespace.
+[32m+[m[32m                               name="City"[m[41m [m
+public/customers/create.php:92: trailing whitespace.
+[32m+[m[32m                               placeholder="Ví dụ: Hồ Chí Minh">[m[41m[m
+public/customers/create.php:93: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/customers/create.php:94: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:95: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3">[m[41m[m
+public/customers/create.php:96: trailing whitespace.
+[32m+[m[32m                        <label for="PostalCode" class="form-label font-weight-bold">Mã bưu chính</label>[m[41m[m
+public/customers/create.php:97: trailing whitespace.
+[32m+[m[32m                        <input type="text"[m[41m [m
+public/customers/create.php:98: trailing whitespace.
+[32m+[m[32m                               class="form-control"[m[41m [m
+public/customers/create.php:99: trailing whitespace.
+[32m+[m[32m                               id="PostalCode"[m[41m [m
+public/customers/create.php:100: trailing whitespace.
+[32m+[m[32m                               name="PostalCode"[m[41m [m
+public/customers/create.php:101: trailing whitespace.
+[32m+[m[32m                               placeholder="Ví dụ: 700000">[m[41m[m
+public/customers/create.php:102: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/customers/create.php:103: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:104: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3">[m[41m[m
+public/customers/create.php:105: trailing whitespace.
+[32m+[m[32m                        <label for="Country" class="form-label font-weight-bold">Quốc gia</label>[m[41m[m
+public/customers/create.php:106: trailing whitespace.
+[32m+[m[32m                        <input type="text"[m[41m [m
+public/customers/create.php:107: trailing whitespace.
+[32m+[m[32m                               class="form-control"[m[41m [m
+public/customers/create.php:108: trailing whitespace.
+[32m+[m[32m                               id="Country"[m[41m [m
+public/customers/create.php:109: trailing whitespace.
+[32m+[m[32m                               name="Country"[m[41m [m
+public/customers/create.php:110: trailing whitespace.
+[32m+[m[32m                               placeholder="Ví dụ: Việt Nam">[m[41m[m
+public/customers/create.php:111: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/customers/create.php:112: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/create.php:113: trailing whitespace.
+[32m+[m[41m[m
+public/customers/create.php:114: trailing whitespace.
+[32m+[m[32m                <div class="d-flex gap-2 mt-3">[m[41m[m
+public/customers/create.php:115: trailing whitespace.
+[32m+[m[32m                    <button type="submit" class="btn btn-success">Lưu lại</button>[m[41m[m
+public/customers/create.php:116: trailing whitespace.
+[32m+[m[32m                    <a href="index.php" class="btn btn-secondary">Hủy bỏ</a>[m[41m[m
+public/customers/create.php:117: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/create.php:118: trailing whitespace.
+[32m+[m[32m            </form>[m[41m[m
+public/customers/create.php:119: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/customers/create.php:120: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/customers/create.php:121: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/customers/create.php:122: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/customers/delete.php:2: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:3: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/customers/delete.php:4: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:5: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] !== 'POST') {[m[41m[m
+public/customers/delete.php:6: trailing whitespace.
+[32m+[m[32m    header('Location: /customers/');[m[41m[m
+public/customers/delete.php:7: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/customers/delete.php:8: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/delete.php:9: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:10: trailing whitespace.
+[32m+[m[32m$customerID = isset($_POST['id'])[m[41m[m
+public/customers/delete.php:11: trailing whitespace.
+[32m+[m[32m    ? (int) $_POST['id'][m[41m[m
+public/customers/delete.php:12: trailing whitespace.
+[32m+[m[32m    : 0;[m[41m[m
+public/customers/delete.php:13: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:14: trailing whitespace.
+[32m+[m[32mif ($customerID <= 0) {[m[41m[m
+public/customers/delete.php:15: trailing whitespace.
+[32m+[m[32m    header('Location: /customers/');[m[41m[m
+public/customers/delete.php:16: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/customers/delete.php:17: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/delete.php:18: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:19: trailing whitespace.
+[32m+[m[32m$sql = "[m[41m[m
+public/customers/delete.php:20: trailing whitespace.
+[32m+[m[32m    DELETE FROM customers[m[41m[m
+public/customers/delete.php:21: trailing whitespace.
+[32m+[m[32m    WHERE CustomerID = ?[m[41m[m
+public/customers/delete.php:22: trailing whitespace.
+[32m+[m[32m";[m[41m[m
+public/customers/delete.php:23: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:24: trailing whitespace.
+[32m+[m[32m$stmt = $conn->prepare($sql);[m[41m[m
+public/customers/delete.php:25: trailing whitespace.
+[32m+[m[32m$stmt->bind_param('i', $customerID);[m[41m[m
+public/customers/delete.php:26: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:27: trailing whitespace.
+[32m+[m[32mif (!$stmt->execute()) {[m[41m[m
+public/customers/delete.php:28: trailing whitespace.
+[32m+[m[32m    // Nếu có lỗi (ví dụ: ràng buộc khóa ngoại do khách hàng đã có đơn hàng)[m[41m[m
+public/customers/delete.php:29: trailing whitespace.
+[32m+[m[32m    $stmt->close();[m[41m[m
+public/customers/delete.php:30: trailing whitespace.
+[32m+[m[32m    $conn->close();[m[41m[m
+public/customers/delete.php:31: trailing whitespace.
+[32m+[m[32m    header('Location: /customers/index.php?error=' . urlencode('Không thể xóa khách hàng này vì đã có dữ liệu liên quan!'));[m[41m[m
+public/customers/delete.php:32: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/customers/delete.php:33: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/delete.php:34: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:35: trailing whitespace.
+[32m+[m[32m$stmt->close();[m[41m[m
+public/customers/delete.php:36: trailing whitespace.
+[32m+[m[32m$conn->close();[m[41m[m
+public/customers/delete.php:37: trailing whitespace.
+[32m+[m[41m[m
+public/customers/delete.php:38: trailing whitespace.
+[32m+[m[32mheader('Location: /customers/');[m[41m[m
+public/customers/edit.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/customers/edit.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Cập Nhật Khách hàng';[m[41m[m
+public/customers/edit.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/customers/edit.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:6: trailing whitespace.
+[32m+[m[32m$id = $_GET['id'] ?? null;[m[41m[m
+public/customers/edit.php:7: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:8: trailing whitespace.
+[32m+[m[32mif (!$id) {[m[41m[m
+public/customers/edit.php:9: trailing whitespace.
+[32m+[m[32m    header("Location: index.php");[m[41m[m
+public/customers/edit.php:10: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/customers/edit.php:11: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/edit.php:12: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:13: trailing whitespace.
+[32m+[m[32m$error = '';[m[41m[m
+public/customers/edit.php:14: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:15: trailing whitespace.
+[32m+[m[32m// Lấy thông tin hiện tại của khách hàng[m[41m[m
+public/customers/edit.php:16: trailing whitespace.
+[32m+[m[32m$stmt = $conn->prepare("SELECT CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country FROM customers WHERE CustomerID = ?");[m[41m[m
+public/customers/edit.php:17: trailing whitespace.
+[32m+[m[32m$stmt->bind_param("i", $id);[m[41m[m
+public/customers/edit.php:18: trailing whitespace.
+[32m+[m[32m$stmt->execute();[m[41m[m
+public/customers/edit.php:19: trailing whitespace.
+[32m+[m[32m$result = $stmt->get_result();[m[41m[m
+public/customers/edit.php:20: trailing whitespace.
+[32m+[m[32m$customer = $result->fetch_assoc();[m[41m[m
+public/customers/edit.php:21: trailing whitespace.
+[32m+[m[32m$stmt->close();[m[41m[m
+public/customers/edit.php:22: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:23: trailing whitespace.
+[32m+[m[32mif (!$customer) {[m[41m[m
+public/customers/edit.php:24: trailing whitespace.
+[32m+[m[32m    header("Location: index.php");[m[41m[m
+public/customers/edit.php:25: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/customers/edit.php:26: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/edit.php:27: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:28: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] === 'POST') {[m[41m[m
+public/customers/edit.php:29: trailing whitespace.
+[32m+[m[32m    $customerName = trim($_POST['CustomerName'] ?? '');[m[41m[m
+public/customers/edit.php:30: trailing whitespace.
+[32m+[m[32m    $contactName  = trim($_POST['ContactName'] ?? '');[m[41m[m
+public/customers/edit.php:31: trailing whitespace.
+[32m+[m[32m    $address      = trim($_POST['Address'] ?? '');[m[41m[m
+public/customers/edit.php:32: trailing whitespace.
+[32m+[m[32m    $city         = trim($_POST['City'] ?? '');[m[41m[m
+public/customers/edit.php:33: trailing whitespace.
+[32m+[m[32m    $postalCode   = trim($_POST['PostalCode'] ?? '');[m[41m[m
+public/customers/edit.php:34: trailing whitespace.
+[32m+[m[32m    $country      = trim($_POST['Country'] ?? '');[m[41m[m
+public/customers/edit.php:35: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:36: trailing whitespace.
+[32m+[m[32m    if (!empty($customerName)) {[m[41m[m
+public/customers/edit.php:37: trailing whitespace.
+[32m+[m[32m        $updateStmt = $conn->prepare("UPDATE customers SET CustomerName = ?, ContactName = ?, Address = ?, City = ?, PostalCode = ?, Country = ? WHERE CustomerID = ?");[m[41m[m
+public/customers/edit.php:38: trailing whitespace.
+[32m+[m[32m        if ($updateStmt) {[m[41m[m
+public/customers/edit.php:39: trailing whitespace.
+[32m+[m[32m            $updateStmt->bind_param("ssssssi", $customerName, $contactName, $address, $city, $postalCode, $country, $id);[m[41m[m
+public/customers/edit.php:40: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:41: trailing whitespace.
+[32m+[m[32m            if ($updateStmt->execute()) {[m[41m[m
+public/customers/edit.php:42: trailing whitespace.
+[32m+[m[32m                $updateStmt->close();[m[41m[m
+public/customers/edit.php:43: trailing whitespace.
+[32m+[m[32m                header("Location: index.php");[m[41m[m
+public/customers/edit.php:44: trailing whitespace.
+[32m+[m[32m                exit;[m[41m[m
+public/customers/edit.php:45: trailing whitespace.
+[32m+[m[32m            } else {[m[41m[m
+public/customers/edit.php:46: trailing whitespace.
+[32m+[m[32m                $error = 'Có lỗi xảy ra khi cập nhật thông tin.';[m[41m[m
+public/customers/edit.php:47: trailing whitespace.
+[32m+[m[32m            }[m[41m[m
+public/customers/edit.php:48: trailing whitespace.
+[32m+[m[32m            $updateStmt->close();[m[41m[m
+public/customers/edit.php:49: trailing whitespace.
+[32m+[m[32m        }[m[41m[m
+public/customers/edit.php:50: trailing whitespace.
+[32m+[m[32m    } else {[m[41m[m
+public/customers/edit.php:51: trailing whitespace.
+[32m+[m[32m        $error = 'Vui lòng nhập tên khách hàng!';[m[41m[m
+public/customers/edit.php:52: trailing whitespace.
+[32m+[m[32m    }[m[41m[m
+public/customers/edit.php:53: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/customers/edit.php:54: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:55: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/customers/edit.php:56: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/customers/edit.php:57: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/customers/edit.php:58: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:59: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/customers/edit.php:60: trailing whitespace.
+[32m+[m[32m    <div class="card shadow-sm">[m[41m[m
+public/customers/edit.php:61: trailing whitespace.
+[32m+[m[32m        <div class="card-header bg-warning text-dark">[m[41m[m
+public/customers/edit.php:62: trailing whitespace.
+[32m+[m[32m            <h4 class="mb-0">Cập Nhật Thông Tin Khách Hàng</h4>[m[41m[m
+public/customers/edit.php:63: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/customers/edit.php:64: trailing whitespace.
+[32m+[m[32m        <div class="card-body">[m[41m[m
+public/customers/edit.php:65: trailing whitespace.
+[32m+[m[32m            <?php if (!empty($error)): ?>[m[41m[m
+public/customers/edit.php:66: trailing whitespace.
+[32m+[m[32m                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>[m[41m[m
+public/customers/edit.php:67: trailing whitespace.
+[32m+[m[32m            <?php endif; ?>[m[41m[m
+public/customers/edit.php:68: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:69: trailing whitespace.
+[32m+[m[32m            <form action="edit.php?id=<?= htmlspecialchars($id) ?>" method="POST">[m[41m[m
+public/customers/edit.php:70: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/customers/edit.php:71: trailing whitespace.
+[32m+[m[32m                    <label for="CustomerName" class="form-label font-weight-bold">[m[41m[m
+public/customers/edit.php:72: trailing whitespace.
+[32m+[m[32m                        Tên khách hàng <span class="text-danger">*</span>[m[41m[m
+public/customers/edit.php:73: trailing whitespace.
+[32m+[m[32m                    </label>[m[41m[m
+public/customers/edit.php:74: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/customers/edit.php:75: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/customers/edit.php:76: trailing whitespace.
+[32m+[m[32m                           id="CustomerName"[m[41m [m
+public/customers/edit.php:77: trailing whitespace.
+[32m+[m[32m                           name="CustomerName"[m[41m [m
+public/customers/edit.php:78: trailing whitespace.
+[32m+[m[32m                           value="<?= htmlspecialchars($customer['CustomerName']) ?>"[m[41m [m
+public/customers/edit.php:79: trailing whitespace.
+[32m+[m[32m                           required>[m[41m[m
+public/customers/edit.php:80: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/edit.php:81: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:82: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/customers/edit.php:83: trailing whitespace.
+[32m+[m[32m                    <label for="ContactName" class="form-label font-weight-bold">Tên người liên hệ</label>[m[41m[m
+public/customers/edit.php:84: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/customers/edit.php:85: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/customers/edit.php:86: trailing whitespace.
+[32m+[m[32m                           id="ContactName"[m[41m [m
+public/customers/edit.php:87: trailing whitespace.
+[32m+[m[32m                           name="ContactName"[m[41m [m
+public/customers/edit.php:88: trailing whitespace.
+[32m+[m[32m                           value="<?= htmlspecialchars($customer['ContactName'] ?? '') ?>">[m[41m[m
+public/customers/edit.php:89: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/edit.php:90: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:91: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/customers/edit.php:92: trailing whitespace.
+[32m+[m[32m                    <label for="Address" class="form-label font-weight-bold">Địa chỉ</label>[m[41m[m
+public/customers/edit.php:93: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/customers/edit.php:94: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/customers/edit.php:95: trailing whitespace.
+[32m+[m[32m                           id="Address"[m[41m [m
+public/customers/edit.php:96: trailing whitespace.
+[32m+[m[32m                           name="Address"[m[41m [m
+public/customers/edit.php:97: trailing whitespace.
+[32m+[m[32m                           value="<?= htmlspecialchars($customer['Address'] ?? '') ?>">[m[41m[m
+public/customers/edit.php:98: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/edit.php:99: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:100: trailing whitespace.
+[32m+[m[32m                <div class="row">[m[41m[m
+public/customers/edit.php:101: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3">[m[41m[m
+public/customers/edit.php:102: trailing whitespace.
+[32m+[m[32m                        <label for="City" class="form-label font-weight-bold">Thành phố</label>[m[41m[m
+public/customers/edit.php:103: trailing whitespace.
+[32m+[m[32m                        <input type="text"[m[41m [m
+public/customers/edit.php:104: trailing whitespace.
+[32m+[m[32m                               class="form-control"[m[41m [m
+public/customers/edit.php:105: trailing whitespace.
+[32m+[m[32m                               id="City"[m[41m [m
+public/customers/edit.php:106: trailing whitespace.
+[32m+[m[32m                               name="City"[m[41m [m
+public/customers/edit.php:107: trailing whitespace.
+[32m+[m[32m                               value="<?= htmlspecialchars($customer['City'] ?? '') ?>">[m[41m[m
+public/customers/edit.php:108: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/customers/edit.php:109: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:110: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3">[m[41m[m
+public/customers/edit.php:111: trailing whitespace.
+[32m+[m[32m                        <label for="PostalCode" class="form-label font-weight-bold">Mã bưu chính</label>[m[41m[m
+public/customers/edit.php:112: trailing whitespace.
+[32m+[m[32m                        <input type="text"[m[41m [m
+public/customers/edit.php:113: trailing whitespace.
+[32m+[m[32m                               class="form-control"[m[41m [m
+public/customers/edit.php:114: trailing whitespace.
+[32m+[m[32m                               id="PostalCode"[m[41m [m
+public/customers/edit.php:115: trailing whitespace.
+[32m+[m[32m                               name="PostalCode"[m[41m [m
+public/customers/edit.php:116: trailing whitespace.
+[32m+[m[32m                               value="<?= htmlspecialchars($customer['PostalCode'] ?? '') ?>">[m[41m[m
+public/customers/edit.php:117: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/customers/edit.php:118: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:119: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3">[m[41m[m
+public/customers/edit.php:120: trailing whitespace.
+[32m+[m[32m                        <label for="Country" class="form-label font-weight-bold">Quốc gia</label>[m[41m[m
+public/customers/edit.php:121: trailing whitespace.
+[32m+[m[32m                        <input type="text"[m[41m [m
+public/customers/edit.php:122: trailing whitespace.
+[32m+[m[32m                               class="form-control"[m[41m [m
+public/customers/edit.php:123: trailing whitespace.
+[32m+[m[32m                               id="Country"[m[41m [m
+public/customers/edit.php:124: trailing whitespace.
+[32m+[m[32m                               name="Country"[m[41m [m
+public/customers/edit.php:125: trailing whitespace.
+[32m+[m[32m                               value="<?= htmlspecialchars($customer['Country'] ?? '') ?>">[m[41m[m
+public/customers/edit.php:126: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/customers/edit.php:127: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/edit.php:128: trailing whitespace.
+[32m+[m[41m[m
+public/customers/edit.php:129: trailing whitespace.
+[32m+[m[32m                <div class="d-flex gap-2 mt-3">[m[41m[m
+public/customers/edit.php:130: trailing whitespace.
+[32m+[m[32m                    <button type="submit" class="btn btn-primary">Cập nhật</button>[m[41m[m
+public/customers/edit.php:131: trailing whitespace.
+[32m+[m[32m                    <a href="index.php" class="btn btn-secondary">Hủy bỏ</a>[m[41m[m
+public/customers/edit.php:132: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/customers/edit.php:133: trailing whitespace.
+[32m+[m[32m            </form>[m[41m[m
+public/customers/edit.php:134: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/customers/edit.php:135: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/customers/edit.php:136: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/customers/edit.php:137: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/customers/index.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Quản lý Khách hàng';[m[41m[m
+public/customers/index.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/customers/index.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:6: trailing whitespace.
+[32m+[m[32m// Lấy thông báo lỗi xóa (nếu có từ delete.php)[m[41m[m
+public/customers/index.php:7: trailing whitespace.
+[32m+[m[32m$errorMessage = $_GET['error'] ?? '';[m[41m[m
+public/customers/index.php:8: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:9: trailing whitespace.
+[32m+[m[32m$sql = "[m[41m[m
+public/customers/index.php:10: trailing whitespace.
+[32m+[m[32m    SELECT[m[41m [m
+public/customers/index.php:11: trailing whitespace.
+[32m+[m[32m        CustomerID,[m[41m[m
+public/customers/index.php:12: trailing whitespace.
+[32m+[m[32m        CustomerName,[m[41m[m
+public/customers/index.php:13: trailing whitespace.
+[32m+[m[32m        ContactName,[m[41m[m
+public/customers/index.php:14: trailing whitespace.
+[32m+[m[32m        Address,[m[41m[m
+public/customers/index.php:15: trailing whitespace.
+[32m+[m[32m        City,[m[41m[m
+public/customers/index.php:16: trailing whitespace.
+[32m+[m[32m        PostalCode,[m[41m[m
+public/customers/index.php:17: trailing whitespace.
+[32m+[m[32m        Country[m[41m[m
+public/customers/index.php:18: trailing whitespace.
+[32m+[m[32m    FROM customers[m[41m[m
+public/customers/index.php:19: trailing whitespace.
+[32m+[m[32m    ORDER BY CustomerID DESC";[m[41m[m
+public/customers/index.php:20: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:21: trailing whitespace.
+[32m+[m[32m$result = $conn->query($sql);[m[41m[m
+public/customers/index.php:22: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:23: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/customers/index.php:24: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/customers/index.php:25: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/customers/index.php:26: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:27: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/customers/index.php:28: trailing whitespace.
+[32m+[m[32m    <div class="d-flex justify-content-between align-items-center mb-3">[m[41m[m
+public/customers/index.php:29: trailing whitespace.
+[32m+[m[32m        <h2>Quản lý Khách hàng</h2>[m[41m[m
+public/customers/index.php:30: trailing whitespace.
+[32m+[m[32m        <a href="create.php" class="btn btn-primary">Thêm Khách hàng</a>[m[41m[m
+public/customers/index.php:31: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/customers/index.php:32: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:33: trailing whitespace.
+[32m+[m[32m    <?php if (!empty($errorMessage)): ?>[m[41m[m
+public/customers/index.php:34: trailing whitespace.
+[32m+[m[32m        <div class="alert alert-danger alert-dismissible fade show" role="alert">[m[41m[m
+public/customers/index.php:35: trailing whitespace.
+[32m+[m[32m            <?= htmlspecialchars($errorMessage) ?>[m[41m[m
+public/customers/index.php:36: trailing whitespace.
+[32m+[m[32m            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>[m[41m[m
+public/customers/index.php:37: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/customers/index.php:38: trailing whitespace.
+[32m+[m[32m    <?php endif; ?>[m[41m[m
+public/customers/index.php:39: trailing whitespace.
+[32m+[m[41m[m
+public/customers/index.php:40: trailing whitespace.
+[32m+[m[32m    <div class="table-responsive">[m[41m[m
+public/customers/index.php:41: trailing whitespace.
+[32m+[m[32m        <table class="table table-striped table-hover align-middle">[m[41m[m
+public/customers/index.php:42: trailing whitespace.
+[32m+[m[32m            <thead class="table-dark">[m[41m[m
+public/customers/index.php:43: trailing whitespace.
+[32m+[m[32m                <tr>[m[41m[m
+public/customers/index.php:44: trailing whitespace.
+[32m+[m[32m                    <th>ID</th>[m[41m[m
+public/customers/index.php:45: trailing whitespace.
+[32m+[m[32m                    <th>Tên khách hàng</th>[m[41m[m
+public/customers/index.php:46: trailing whitespace.
+[32m+[m[32m                    <th>Người liên hệ</th>[m[41m[m
+public/customers/index.php:47: trailing whitespace.
+[32m+[m[32m                    <th>Địa chỉ</th>[m[41m[m
+public/customers/index.php:48: trailing whitespace.
+[32m+[m[32m                    <th>Thành phố</th>[m[41m[m
+public/customers/index.php:49: trailing whitespace.
+[32m+[m[32m                    <th>Mã bưu chính</th>[m[41m[m
+public/customers/index.php:50: trailing whitespace.
+[32m+[m[32m                    <th>Quốc gia</th>[m[41m[m
+public/customers/index.php:51: trailing whitespace.
+[32m+[m[32m                    <th width="160">Hành động</th>[m[41m[m
+public/customers/index.php:52: trailing whitespace.
+[32m+[m[32m                </tr>[m[41m[m
+public/customers/index.php:53: trailing whitespace.
+[32m+[m[32m            </thead>[m[41m[m
+public/customers/index.php:54: trailing whitespace.
+[32m+[m[32m            <tbody>[m[41m[m
+public/customers/index.php:55: trailing whitespace.
+[32m+[m[32m                <?php if ($result && $result->num_rows > 0): ?>[m[41m[m
+public/customers/index.php:56: trailing whitespace.
+[32m+[m[32m                    <?php while ($row = $result->fetch_assoc()): ?>[m[41m[m
+public/customers/index.php:57: trailing whitespace.
+[32m+[m[32m                        <tr>[m[41m[m
+public/customers/index.php:58: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['CustomerID']) ?></td>[m[41m[m
+public/customers/index.php:59: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['CustomerName']) ?></td>[m[41m[m
+public/customers/index.php:60: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['ContactName'] ?? '') ?></td>[m[41m[m
+public/customers/index.php:61: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['Address'] ?? '') ?></td>[m[41m[m
+public/customers/index.php:62: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['City'] ?? '') ?></td>[m[41m[m
+public/customers/index.php:63: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['PostalCode'] ?? '') ?></td>[m[41m[m
+public/customers/index.php:64: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['Country'] ?? '') ?></td>[m[41m[m
+public/customers/index.php:65: trailing whitespace.
+[32m+[m[32m                            <td>[m[41m[m
+public/customers/index.php:66: trailing whitespace.
+[32m+[m[32m                                <a href="edit.php?id=<?= $row['CustomerID'] ?>" class="btn btn-sm btn-warning">Sửa</a>[m[41m[m
+public/customers/index.php:67: trailing whitespace.
+[32m+[m[32m                                <form action="delete.php" method="POST" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa khách hàng này?')">[m[41m[m
+public/customers/index.php:68: trailing whitespace.
+[32m+[m[32m                                    <input type="hidden" name="id" value="<?= $row['CustomerID'] ?>">[m[41m[m
+public/customers/index.php:69: trailing whitespace.
+[32m+[m[32m                                    <button type="submit" class="btn btn-sm btn-danger">Xóa</button>[m[41m[m
+public/customers/index.php:70: trailing whitespace.
+[32m+[m[32m                                </form>[m[41m[m
+public/customers/index.php:71: trailing whitespace.
+[32m+[m[32m                                </td>[m[41m[m
+public/customers/index.php:72: trailing whitespace.
+[32m+[m[32m                        </tr>[m[41m[m
+public/customers/index.php:73: trailing whitespace.
+[32m+[m[32m                    <?php endwhile; ?>[m[41m[m
+public/customers/index.php:74: trailing whitespace.
+[32m+[m[32m                <?php else: ?>[m[41m[m
+public/customers/index.php:75: trailing whitespace.
+[32m+[m[32m                    <tr>[m[41m[m
+public/customers/index.php:76: trailing whitespace.
+[32m+[m[32m                        <td colspan="8" class="text-center">Chưa có dữ liệu.</td>[m[41m[m
+public/customers/index.php:77: trailing whitespace.
+[32m+[m[32m                    </tr>[m[41m[m
+public/customers/index.php:78: trailing whitespace.
+[32m+[m[32m                <?php endif; ?>[m[41m[m
+public/customers/index.php:79: trailing whitespace.
+[32m+[m[32m            </tbody>[m[41m[m
+public/customers/index.php:80: trailing whitespace.
+[32m+[m[32m        </table>[m[41m[m
+public/customers/index.php:81: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/customers/index.php:82: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/customers/index.php:83: trailing whitespace.
+[32m+[m[41m[m
+public/employees/create.php:27: trailing whitespace.
+[32m+[m[41m            [m
+public/employees/create.php:66: trailing whitespace.
+[32m+[m[41m            [m
+public/employees/edit.php:59: trailing whitespace.
+[32m+[m[41m    [m
+public/employees/edit.php:70: trailing whitespace.
+[32m+[m[41m        [m
+public/employees/edit.php:76: trailing whitespace.
+[32m+[m[41m            [m
+public/employees/edit.php:101: trailing whitespace.
+[32m+[m[41m                        [m
+public/employees/edit.php:239: trailing whitespace.
+[32m+[m[41m            [m
+public/employees/edit.php:243: trailing whitespace.
+[32m+[m[32m                    <img[m[41m [m
+public/employees/edit.php:244: trailing whitespace.
+[32m+[m[32m                        src="/uploads/employees/<?= htmlspecialchars($employee['Photo']) ?>"[m[41m [m
+public/employees/edit.php:245: trailing whitespace.
+[32m+[m[32m                        alt="Current Photo"[m[41m [m
+public/employees/edit.php:246: trailing whitespace.
+[32m+[m[32m                        class="img-thumbnail"[m[41m [m
+public/employees/index.php:70: trailing whitespace.
+[32m+[m[32m                                    <img[m[41m [m
+public/employees/index.php:71: trailing whitespace.
+[32m+[m[32m                                        src="/uploads/employees/<?= htmlspecialchars($employee['Photo']) ?>"[m[41m [m
+public/employees/index.php:72: trailing whitespace.
+[32m+[m[32m                                        alt="Avatar"[m[41m [m
+public/employees/index.php:92: trailing whitespace.
+[32m+[m[32m                                <?php[m[41m [m
+public/employees/index.php:94: trailing whitespace.
+[32m+[m[32m                                    echo mb_strimwidth($notes, 0, 50, '...');[m[41m [m
+public/index.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/index.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Trang chủ';[m[41m[m
+public/index.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/index.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/frontend/header.php';[m[41m[m
+public/index.php:5: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/frontend/navbar.php';[m[41m[m
+public/index.php:6: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/index.php:7: trailing whitespace.
+[32m+[m[41m[m
+public/index.php:8: trailing whitespace.
+[32m+[m[32m<main class="container py-5">[m[41m[m
+public/index.php:9: trailing whitespace.
+[32m+[m[41m[m
+public/index.php:10: trailing whitespace.
+[32m+[m[32m    <h1>Hệ thống quản lý bán hàng</h1>[m[41m[m
+public/index.php:11: trailing whitespace.
+[32m+[m[41m[m
+public/index.php:12: trailing whitespace.
+[32m+[m[32m    <p class="text-muted">[m[41m[m
+public/index.php:13: trailing whitespace.
+[32m+[m[32m        Ứng dụng PHP và MySQL đang hoạt động.[m[41m[m
+public/index.php:14: trailing whitespace.
+[32m+[m[32m    </p>[m[41m[m
+public/index.php:15: trailing whitespace.
+[32m+[m[41m[m
+public/index.php:16: trailing whitespace.
+[32m+[m[32m</main>[m[41m[m
+public/index.php:17: trailing whitespace.
+[32m+[m[41m[m
+public/index.php:18: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/products/create.php:27: trailing whitespace.
+[32m+[m[41m        [m
+public/products/create.php:102: trailing whitespace.
+[32m+[m[41m        [m
+public/products/create.php:108: trailing whitespace.
+[32m+[m[32m<?php[m[41m [m
+public/products/index.php:10: trailing whitespace.
+[32m+[m[32m    SELECT[m[41m [m
+public/products/index.php:67: trailing whitespace.
+[32m+[m[32m                                <img src="/<?= ltrim(htmlspecialchars($product['ImagePath']), '/') ?>"[m[41m [m
+public/products/index.php:68: trailing whitespace.
+[32m+[m[32m                                     alt="<?= htmlspecialchars($product['ProductName']) ?>"[m[41m [m
+public/products/index.php:69: trailing whitespace.
+[32m+[m[32m                                     class="img-thumbnail"[m[41m [m
+public/products/index.php:85: trailing whitespace.
+[32m+[m[41m                        [m
+public/products/index.php:97: trailing whitespace.
+[32m+[m[32m                            <a href="/admin/products/edit.php?id=<?= $product['ProductID'] ?>"[m[41m [m
+public/products/index.php:99: trailing whitespace.
+[32m+[m[41m                            [m
+public/products/index.php:100: trailing whitespace.
+[32m+[m[32m                            <a href="/admin/products/delete.php?id=<?= $product['ProductID'] ?>"[m[41m [m
+public/products/index.php:101: trailing whitespace.
+[32m+[m[32m                               class="btn btn-sm btn-danger"[m[41m [m
+public/shippers/create.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/shippers/create.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Thêm Nhân viên giao hàng';[m[41m[m
+public/shippers/create.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/shippers/create.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:6: trailing whitespace.
+[32m+[m[32m$error = '';[m[41m[m
+public/shippers/create.php:7: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:8: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] === 'POST') {[m[41m[m
+public/shippers/create.php:9: trailing whitespace.
+[32m+[m[32m    $shipperName = trim($_POST['ShipperName'] ?? '');[m[41m[m
+public/shippers/create.php:10: trailing whitespace.
+[32m+[m[32m    $phone = trim($_POST['Phone'] ?? '');[m[41m[m
+public/shippers/create.php:11: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:12: trailing whitespace.
+[32m+[m[32m    if (!empty($shipperName)) {[m[41m[m
+public/shippers/create.php:13: trailing whitespace.
+[32m+[m[32m        $sql = "INSERT INTO shippers (ShipperName, Phone) VALUES (?, ?)";[m[41m[m
+public/shippers/create.php:14: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:15: trailing whitespace.
+[32m+[m[32m        $stmt = $conn->prepare($sql);[m[41m[m
+public/shippers/create.php:16: trailing whitespace.
+[32m+[m[32m        if ($stmt) {[m[41m[m
+public/shippers/create.php:17: trailing whitespace.
+[32m+[m[32m            $stmt->bind_param('ss', $shipperName, $phone);[m[41m[m
+public/shippers/create.php:18: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:19: trailing whitespace.
+[32m+[m[32m            if ($stmt->execute()) {[m[41m[m
+public/shippers/create.php:20: trailing whitespace.
+[32m+[m[32m                $stmt->close();[m[41m[m
+public/shippers/create.php:21: trailing whitespace.
+[32m+[m[32m                header('Location: index.php');[m[41m[m
+public/shippers/create.php:22: trailing whitespace.
+[32m+[m[32m                exit;[m[41m[m
+public/shippers/create.php:23: trailing whitespace.
+[32m+[m[32m            } else {[m[41m[m
+public/shippers/create.php:24: trailing whitespace.
+[32m+[m[32m                $error = 'Không thể thêm nhân viên giao hàng vào cơ sở dữ liệu.';[m[41m[m
+public/shippers/create.php:25: trailing whitespace.
+[32m+[m[32m            }[m[41m[m
+public/shippers/create.php:26: trailing whitespace.
+[32m+[m[32m            $stmt->close();[m[41m[m
+public/shippers/create.php:27: trailing whitespace.
+[32m+[m[32m        } else {[m[41m[m
+public/shippers/create.php:28: trailing whitespace.
+[32m+[m[32m            $error = 'Lỗi câu lệnh cơ sở dữ liệu!';[m[41m[m
+public/shippers/create.php:29: trailing whitespace.
+[32m+[m[32m        }[m[41m[m
+public/shippers/create.php:30: trailing whitespace.
+[32m+[m[32m    } else {[m[41m[m
+public/shippers/create.php:31: trailing whitespace.
+[32m+[m[32m        $error = 'Vui lòng nhập tên nhân viên giao hàng!';[m[41m[m
+public/shippers/create.php:32: trailing whitespace.
+[32m+[m[32m    }[m[41m[m
+public/shippers/create.php:33: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/shippers/create.php:34: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:35: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/shippers/create.php:36: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/shippers/create.php:37: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/shippers/create.php:38: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:39: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/shippers/create.php:40: trailing whitespace.
+[32m+[m[32m    <div class="card shadow-sm">[m[41m[m
+public/shippers/create.php:41: trailing whitespace.
+[32m+[m[32m        <div class="card-header bg-primary text-white">[m[41m[m
+public/shippers/create.php:42: trailing whitespace.
+[32m+[m[32m            <h4 class="mb-0">Thêm Nhân Viên Giao Hàng Mới</h4>[m[41m[m
+public/shippers/create.php:43: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/shippers/create.php:44: trailing whitespace.
+[32m+[m[32m        <div class="card-body">[m[41m[m
+public/shippers/create.php:45: trailing whitespace.
+[32m+[m[32m            <?php if (!empty($error)): ?>[m[41m[m
+public/shippers/create.php:46: trailing whitespace.
+[32m+[m[32m                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>[m[41m[m
+public/shippers/create.php:47: trailing whitespace.
+[32m+[m[32m            <?php endif; ?>[m[41m[m
+public/shippers/create.php:48: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:49: trailing whitespace.
+[32m+[m[32m            <form action="create.php" method="POST">[m[41m[m
+public/shippers/create.php:50: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/shippers/create.php:51: trailing whitespace.
+[32m+[m[32m                    <label for="ShipperName" class="form-label font-weight-bold">[m[41m[m
+public/shippers/create.php:52: trailing whitespace.
+[32m+[m[32m                        Tên nhân viên giao hàng <span class="text-danger">*</span>[m[41m[m
+public/shippers/create.php:53: trailing whitespace.
+[32m+[m[32m                    </label>[m[41m[m
+public/shippers/create.php:54: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/shippers/create.php:55: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/shippers/create.php:56: trailing whitespace.
+[32m+[m[32m                           id="ShipperName"[m[41m [m
+public/shippers/create.php:57: trailing whitespace.
+[32m+[m[32m                           name="ShipperName"[m[41m [m
+public/shippers/create.php:58: trailing whitespace.
+[32m+[m[32m                           placeholder="Ví dụ: Nguyễn Văn A, Giao Hàng Nhanh..."[m[41m [m
+public/shippers/create.php:59: trailing whitespace.
+[32m+[m[32m                           required>[m[41m[m
+public/shippers/create.php:60: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/shippers/create.php:61: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:62: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/shippers/create.php:63: trailing whitespace.
+[32m+[m[32m                    <label for="Phone" class="form-label font-weight-bold">Số điện thoại</label>[m[41m[m
+public/shippers/create.php:64: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/shippers/create.php:65: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/shippers/create.php:66: trailing whitespace.
+[32m+[m[32m                           id="Phone"[m[41m [m
+public/shippers/create.php:67: trailing whitespace.
+[32m+[m[32m                           name="Phone"[m[41m [m
+public/shippers/create.php:68: trailing whitespace.
+[32m+[m[32m                           placeholder="Ví dụ: 0901234567">[m[41m[m
+public/shippers/create.php:69: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/shippers/create.php:70: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/create.php:71: trailing whitespace.
+[32m+[m[32m                <div class="d-flex gap-2">[m[41m[m
+public/shippers/create.php:72: trailing whitespace.
+[32m+[m[32m                    <button type="submit" class="btn btn-success">Lưu lại</button>[m[41m[m
+public/shippers/create.php:73: trailing whitespace.
+[32m+[m[32m                    <a href="index.php" class="btn btn-secondary">Hủy bỏ</a>[m[41m[m
+public/shippers/create.php:74: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/shippers/create.php:75: trailing whitespace.
+[32m+[m[32m            </form>[m[41m[m
+public/shippers/create.php:76: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/shippers/create.php:77: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/shippers/create.php:78: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/shippers/create.php:79: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/shippers/edit.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Cập Nhật Nhân viên giao hàng';[m[41m[m
+public/shippers/edit.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/shippers/edit.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:6: trailing whitespace.
+[32m+[m[32m$id = $_GET['id'] ?? null;[m[41m[m
+public/shippers/edit.php:7: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:8: trailing whitespace.
+[32m+[m[32mif (!$id) {[m[41m[m
+public/shippers/edit.php:9: trailing whitespace.
+[32m+[m[32m    header("Location: index.php");[m[41m[m
+public/shippers/edit.php:10: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/shippers/edit.php:11: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/shippers/edit.php:12: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:13: trailing whitespace.
+[32m+[m[32m$error = '';[m[41m[m
+public/shippers/edit.php:14: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:15: trailing whitespace.
+[32m+[m[32m// Lấy thông tin hiện tại[m[41m[m
+public/shippers/edit.php:16: trailing whitespace.
+[32m+[m[32m$stmt = $conn->prepare("SELECT ShipperID, ShipperName, Phone FROM shippers WHERE ShipperID = ?");[m[41m[m
+public/shippers/edit.php:17: trailing whitespace.
+[32m+[m[32m$stmt->bind_param("i", $id);[m[41m[m
+public/shippers/edit.php:18: trailing whitespace.
+[32m+[m[32m$stmt->execute();[m[41m[m
+public/shippers/edit.php:19: trailing whitespace.
+[32m+[m[32m$result = $stmt->get_result();[m[41m[m
+public/shippers/edit.php:20: trailing whitespace.
+[32m+[m[32m$shipper = $result->fetch_assoc();[m[41m[m
+public/shippers/edit.php:21: trailing whitespace.
+[32m+[m[32m$stmt->close();[m[41m[m
+public/shippers/edit.php:22: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:23: trailing whitespace.
+[32m+[m[32mif (!$shipper) {[m[41m[m
+public/shippers/edit.php:24: trailing whitespace.
+[32m+[m[32m    header("Location: index.php");[m[41m[m
+public/shippers/edit.php:25: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/shippers/edit.php:26: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/shippers/edit.php:27: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:28: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] === 'POST') {[m[41m[m
+public/shippers/edit.php:29: trailing whitespace.
+[32m+[m[32m    $shipperName = trim($_POST['ShipperName'] ?? '');[m[41m[m
+public/shippers/edit.php:30: trailing whitespace.
+[32m+[m[32m    $phone = trim($_POST['Phone'] ?? '');[m[41m[m
+public/shippers/edit.php:31: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:32: trailing whitespace.
+[32m+[m[32m    if (!empty($shipperName)) {[m[41m[m
+public/shippers/edit.php:33: trailing whitespace.
+[32m+[m[32m        $updateStmt = $conn->prepare("UPDATE shippers SET ShipperName = ?, Phone = ? WHERE ShipperID = ?");[m[41m[m
+public/shippers/edit.php:34: trailing whitespace.
+[32m+[m[32m        if ($updateStmt) {[m[41m[m
+public/shippers/edit.php:35: trailing whitespace.
+[32m+[m[32m            $updateStmt->bind_param("ssi", $shipperName, $phone, $id);[m[41m[m
+public/shippers/edit.php:36: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:37: trailing whitespace.
+[32m+[m[32m            if ($updateStmt->execute()) {[m[41m[m
+public/shippers/edit.php:38: trailing whitespace.
+[32m+[m[32m                $updateStmt->close();[m[41m[m
+public/shippers/edit.php:39: trailing whitespace.
+[32m+[m[32m                header("Location: index.php");[m[41m[m
+public/shippers/edit.php:40: trailing whitespace.
+[32m+[m[32m                exit;[m[41m[m
+public/shippers/edit.php:41: trailing whitespace.
+[32m+[m[32m            } else {[m[41m[m
+public/shippers/edit.php:42: trailing whitespace.
+[32m+[m[32m                $error = 'Có lỗi xảy ra khi cập nhật.';[m[41m[m
+public/shippers/edit.php:43: trailing whitespace.
+[32m+[m[32m            }[m[41m[m
+public/shippers/edit.php:44: trailing whitespace.
+[32m+[m[32m            $updateStmt->close();[m[41m[m
+public/shippers/edit.php:45: trailing whitespace.
+[32m+[m[32m        }[m[41m[m
+public/shippers/edit.php:46: trailing whitespace.
+[32m+[m[32m    } else {[m[41m[m
+public/shippers/edit.php:47: trailing whitespace.
+[32m+[m[32m        $error = 'Vui lòng nhập tên nhân viên giao hàng!';[m[41m[m
+public/shippers/edit.php:48: trailing whitespace.
+[32m+[m[32m    }[m[41m[m
+public/shippers/edit.php:49: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/shippers/edit.php:50: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:51: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/shippers/edit.php:52: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/shippers/edit.php:53: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/shippers/edit.php:54: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:55: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/shippers/edit.php:56: trailing whitespace.
+[32m+[m[32m    <div class="card shadow-sm">[m[41m[m
+public/shippers/edit.php:57: trailing whitespace.
+[32m+[m[32m        <div class="card-header bg-warning text-dark">[m[41m[m
+public/shippers/edit.php:58: trailing whitespace.
+[32m+[m[32m            <h4 class="mb-0">Cập Nhật Thông Tin Nhân Viên Giao Hàng</h4>[m[41m[m
+public/shippers/edit.php:59: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/shippers/edit.php:60: trailing whitespace.
+[32m+[m[32m        <div class="card-body">[m[41m[m
+public/shippers/edit.php:61: trailing whitespace.
+[32m+[m[32m            <?php if (!empty($error)): ?>[m[41m[m
+public/shippers/edit.php:62: trailing whitespace.
+[32m+[m[32m                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>[m[41m[m
+public/shippers/edit.php:63: trailing whitespace.
+[32m+[m[32m            <?php endif; ?>[m[41m[m
+public/shippers/edit.php:64: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:65: trailing whitespace.
+[32m+[m[32m            <form action="edit.php?id=<?= htmlspecialchars($id) ?>" method="POST">[m[41m[m
+public/shippers/edit.php:66: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/shippers/edit.php:67: trailing whitespace.
+[32m+[m[32m                    <label for="ShipperName" class="form-label font-weight-bold">[m[41m[m
+public/shippers/edit.php:68: trailing whitespace.
+[32m+[m[32m                        Tên nhân viên giao hàng <span class="text-danger">*</span>[m[41m[m
+public/shippers/edit.php:69: trailing whitespace.
+[32m+[m[32m                    </label>[m[41m[m
+public/shippers/edit.php:70: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/shippers/edit.php:71: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/shippers/edit.php:72: trailing whitespace.
+[32m+[m[32m                           id="ShipperName"[m[41m [m
+public/shippers/edit.php:73: trailing whitespace.
+[32m+[m[32m                           name="ShipperName"[m[41m [m
+public/shippers/edit.php:74: trailing whitespace.
+[32m+[m[32m                           value="<?= htmlspecialchars($shipper['ShipperName']) ?>"[m[41m [m
+public/shippers/edit.php:75: trailing whitespace.
+[32m+[m[32m                           required>[m[41m[m
+public/shippers/edit.php:76: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/shippers/edit.php:77: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:78: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/shippers/edit.php:79: trailing whitespace.
+[32m+[m[32m                    <label for="Phone" class="form-label font-weight-bold">Số điện thoại</label>[m[41m[m
+public/shippers/edit.php:80: trailing whitespace.
+[32m+[m[32m                    <input type="text"[m[41m [m
+public/shippers/edit.php:81: trailing whitespace.
+[32m+[m[32m                           class="form-control"[m[41m [m
+public/shippers/edit.php:82: trailing whitespace.
+[32m+[m[32m                           id="Phone"[m[41m [m
+public/shippers/edit.php:83: trailing whitespace.
+[32m+[m[32m                           name="Phone"[m[41m [m
+public/shippers/edit.php:84: trailing whitespace.
+[32m+[m[32m                           value="<?= htmlspecialchars($shipper['Phone'] ?? '') ?>">[m[41m[m
+public/shippers/edit.php:85: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/shippers/edit.php:86: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/edit.php:87: trailing whitespace.
+[32m+[m[32m                <div class="d-flex gap-2">[m[41m[m
+public/shippers/edit.php:88: trailing whitespace.
+[32m+[m[32m                    <button type="submit" class="btn btn-primary">Cập nhật</button>[m[41m[m
+public/shippers/edit.php:89: trailing whitespace.
+[32m+[m[32m                    <a href="index.php" class="btn btn-secondary">Hủy bỏ</a>[m[41m[m
+public/shippers/edit.php:90: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/shippers/edit.php:91: trailing whitespace.
+[32m+[m[32m            </form>[m[41m[m
+public/shippers/edit.php:92: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/shippers/edit.php:93: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/shippers/edit.php:94: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/shippers/edit.php:95: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/shippers/index.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Quản lý Nhân viên giao hàng';[m[41m[m
+public/shippers/index.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:4: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/shippers/index.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:6: trailing whitespace.
+[32m+[m[32m// Lấy thông báo lỗi xóa (nếu có từ delete.php)[m[41m[m
+public/shippers/index.php:7: trailing whitespace.
+[32m+[m[32m$errorMessage = $_GET['error'] ?? '';[m[41m[m
+public/shippers/index.php:8: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:9: trailing whitespace.
+[32m+[m[32m$sql = "[m[41m[m
+public/shippers/index.php:10: trailing whitespace.
+[32m+[m[32m    SELECT[m[41m [m
+public/shippers/index.php:11: trailing whitespace.
+[32m+[m[32m        ShipperID,[m[41m[m
+public/shippers/index.php:12: trailing whitespace.
+[32m+[m[32m        ShipperName,[m[41m[m
+public/shippers/index.php:13: trailing whitespace.
+[32m+[m[32m        Phone[m[41m[m
+public/shippers/index.php:14: trailing whitespace.
+[32m+[m[32m    FROM shippers[m[41m[m
+public/shippers/index.php:15: trailing whitespace.
+[32m+[m[32m    ORDER BY ShipperID DESC[m[41m[m
+public/shippers/index.php:16: trailing whitespace.
+[32m+[m[32m";[m[41m[m
+public/shippers/index.php:17: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:18: trailing whitespace.
+[32m+[m[32m$result = $conn->query($sql);[m[41m[m
+public/shippers/index.php:19: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:20: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/shippers/index.php:21: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/shippers/index.php:22: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/shippers/index.php:23: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:24: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/shippers/index.php:25: trailing whitespace.
+[32m+[m[32m    <div class="d-flex justify-content-between align-items-center mb-3">[m[41m[m
+public/shippers/index.php:26: trailing whitespace.
+[32m+[m[32m        <h2>Quản lý Nhân viên giao hàng</h2>[m[41m[m
+public/shippers/index.php:27: trailing whitespace.
+[32m+[m[32m        <a href="create.php" class="btn btn-primary">Thêm Nhân viên giao hàng</a>[m[41m[m
+public/shippers/index.php:28: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/shippers/index.php:29: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:30: trailing whitespace.
+[32m+[m[32m    <?php if (!empty($errorMessage)): ?>[m[41m[m
+public/shippers/index.php:31: trailing whitespace.
+[32m+[m[32m        <div class="alert alert-danger alert-dismissible fade show" role="alert">[m[41m[m
+public/shippers/index.php:32: trailing whitespace.
+[32m+[m[32m            <?= htmlspecialchars($errorMessage) ?>[m[41m[m
+public/shippers/index.php:33: trailing whitespace.
+[32m+[m[32m            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>[m[41m[m
+public/shippers/index.php:34: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/shippers/index.php:35: trailing whitespace.
+[32m+[m[32m    <?php endif; ?>[m[41m[m
+public/shippers/index.php:36: trailing whitespace.
+[32m+[m[41m[m
+public/shippers/index.php:37: trailing whitespace.
+[32m+[m[32m    <div class="table-responsive">[m[41m[m
+public/shippers/index.php:38: trailing whitespace.
+[32m+[m[32m        <table class="table table-striped table-hover align-middle">[m[41m[m
+public/shippers/index.php:39: trailing whitespace.
+[32m+[m[32m            <thead class="table-dark">[m[41m[m
+public/shippers/index.php:40: trailing whitespace.
+[32m+[m[32m                <tr>[m[41m[m
+public/shippers/index.php:41: trailing whitespace.
+[32m+[m[32m                    <th>ID</th>[m[41m[m
+public/shippers/index.php:42: trailing whitespace.
+[32m+[m[32m                    <th>Tên nhân viên giao hàng</th>[m[41m[m
+public/shippers/index.php:43: trailing whitespace.
+[32m+[m[32m                    <th>Số điện thoại</th>[m[41m[m
+public/shippers/index.php:44: trailing whitespace.
+[32m+[m[32m                    <th width="160">Hành động</th>[m[41m[m
+public/shippers/index.php:45: trailing whitespace.
+[32m+[m[32m                </tr>[m[41m[m
+public/shippers/index.php:46: trailing whitespace.
+[32m+[m[32m            </thead>[m[41m[m
+public/shippers/index.php:47: trailing whitespace.
+[32m+[m[32m            <tbody>[m[41m[m
+public/shippers/index.php:48: trailing whitespace.
+[32m+[m[32m                <?php if ($result && $result->num_rows > 0): ?>[m[41m[m
+public/shippers/index.php:49: trailing whitespace.
+[32m+[m[32m                    <?php while ($row = $result->fetch_assoc()): ?>[m[41m[m
+public/shippers/index.php:50: trailing whitespace.
+[32m+[m[32m                        <tr>[m[41m[m
+public/shippers/index.php:51: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['ShipperID']) ?></td>[m[41m[m
+public/shippers/index.php:52: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['ShipperName']) ?></td>[m[41m[m
+public/shippers/index.php:53: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['Phone'] ?? '') ?></td>[m[41m[m
+public/shippers/index.php:54: trailing whitespace.
+[32m+[m[32m                            <td>[m[41m[m
+public/shippers/index.php:55: trailing whitespace.
+[32m+[m[32m                                <a href="edit.php?id=<?= $row['ShipperID'] ?>" class="btn btn-sm btn-warning">Sửa</a>[m[41m[m
+public/shippers/index.php:56: trailing whitespace.
+[32m+[m[32m                                <form action="delete.php" method="POST" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa nhân viên giao hàng này?')">[m[41m[m
+public/shippers/index.php:57: trailing whitespace.
+[32m+[m[32m    <input type="hidden" name="id" value="<?= $row['ShipperID'] ?>">[m[41m[m
+public/shippers/index.php:58: trailing whitespace.
+[32m+[m[32m    <button type="submit" class="btn btn-sm btn-danger">Xóa</button>[m[41m[m
+public/shippers/index.php:59: trailing whitespace.
+[32m+[m[32m</form>[m[41m[m
+public/shippers/index.php:60: trailing whitespace.
+[32m+[m[32m                            </td>[m[41m[m
+public/shippers/index.php:61: trailing whitespace.
+[32m+[m[32m                        </tr>[m[41m[m
+public/shippers/index.php:62: trailing whitespace.
+[32m+[m[32m                    <?php endwhile; ?>[m[41m[m
+public/shippers/index.php:63: trailing whitespace.
+[32m+[m[32m                <?php else: ?>[m[41m[m
+public/shippers/index.php:64: trailing whitespace.
+[32m+[m[32m                    <tr>[m[41m[m
+public/shippers/index.php:65: trailing whitespace.
+[32m+[m[32m                        <td colspan="4" class="text-center">Chưa có dữ liệu.</td>[m[41m[m
+public/shippers/index.php:66: trailing whitespace.
+[32m+[m[32m                    </tr>[m[41m[m
+public/shippers/index.php:67: trailing whitespace.
+[32m+[m[32m                <?php endif; ?>[m[41m[m
+public/shippers/index.php:68: trailing whitespace.
+[32m+[m[32m            </tbody>[m[41m[m
+public/shippers/index.php:69: trailing whitespace.
+[32m+[m[32m        </table>[m[41m[m
+public/shippers/index.php:70: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/shippers/index.php:71: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/shippers/index.php:72: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/create.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/suppliers/create.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Thêm Nhà cung cấp';[m[41m[m
+public/suppliers/create.php:3: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/suppliers/create.php:4: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/create.php:5: trailing whitespace.
+[32m+[m[32m$error = '';[m[41m[m
+public/suppliers/create.php:6: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] === 'POST') {[m[41m[m
+public/suppliers/create.php:7: trailing whitespace.
+[32m+[m[32m    $supplierName = trim($_POST['SupplierName'] ?? '');[m[41m[m
+public/suppliers/create.php:8: trailing whitespace.
+[32m+[m[32m    $contactName  = trim($_POST['ContactName'] ?? '');[m[41m[m
+public/suppliers/create.php:9: trailing whitespace.
+[32m+[m[32m    $address      = trim($_POST['Address'] ?? '');[m[41m[m
+public/suppliers/create.php:10: trailing whitespace.
+[32m+[m[32m    $city         = trim($_POST['City'] ?? '');[m[41m[m
+public/suppliers/create.php:11: trailing whitespace.
+[32m+[m[32m    $postalCode   = trim($_POST['PostalCode'] ?? '');[m[41m[m
+public/suppliers/create.php:12: trailing whitespace.
+[32m+[m[32m    $country      = trim($_POST['Country'] ?? '');[m[41m[m
+public/suppliers/create.php:13: trailing whitespace.
+[32m+[m[32m    $phone        = trim($_POST['Phone'] ?? '');[m[41m[m
+public/suppliers/create.php:14: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/create.php:15: trailing whitespace.
+[32m+[m[32m    if (!empty($supplierName)) {[m[41m[m
+public/suppliers/create.php:16: trailing whitespace.
+[32m+[m[32m        $sql = "INSERT INTO suppliers (SupplierName, ContactName, Address, City, PostalCode, Country, Phone) VALUES (?, ?, ?, ?, ?, ?, ?)";[m[41m[m
+public/suppliers/create.php:17: trailing whitespace.
+[32m+[m[32m        $stmt = $conn->prepare($sql);[m[41m[m
+public/suppliers/create.php:18: trailing whitespace.
+[32m+[m[32m        if ($stmt) {[m[41m[m
+public/suppliers/create.php:19: trailing whitespace.
+[32m+[m[32m            $stmt->bind_param('sssssss', $supplierName, $contactName, $address, $city, $postalCode, $country, $phone);[m[41m[m
+public/suppliers/create.php:20: trailing whitespace.
+[32m+[m[32m            if ($stmt->execute()) {[m[41m[m
+public/suppliers/create.php:21: trailing whitespace.
+[32m+[m[32m                $stmt->close();[m[41m[m
+public/suppliers/create.php:22: trailing whitespace.
+[32m+[m[32m                header('Location: index.php');[m[41m[m
+public/suppliers/create.php:23: trailing whitespace.
+[32m+[m[32m                exit;[m[41m[m
+public/suppliers/create.php:24: trailing whitespace.
+[32m+[m[32m            } else { $error = 'Lỗi lưu dữ liệu.'; }[m[41m[m
+public/suppliers/create.php:25: trailing whitespace.
+[32m+[m[32m            $stmt->close();[m[41m[m
+public/suppliers/create.php:26: trailing whitespace.
+[32m+[m[32m        }[m[41m[m
+public/suppliers/create.php:27: trailing whitespace.
+[32m+[m[32m    } else { $error = 'Vui lòng nhập tên nhà cung cấp!'; }[m[41m[m
+public/suppliers/create.php:28: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/suppliers/create.php:29: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/create.php:30: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/suppliers/create.php:31: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/suppliers/create.php:32: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/suppliers/create.php:33: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/create.php:34: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/suppliers/create.php:35: trailing whitespace.
+[32m+[m[32m    <div class="card shadow-sm">[m[41m[m
+public/suppliers/create.php:36: trailing whitespace.
+[32m+[m[32m        <div class="card-header bg-primary text-white"><h4 class="mb-0">Thêm Nhà Cung Cấp</h4></div>[m[41m[m
+public/suppliers/create.php:37: trailing whitespace.
+[32m+[m[32m        <div class="card-body">[m[41m[m
+public/suppliers/create.php:38: trailing whitespace.
+[32m+[m[32m            <?php if (!empty($error)): ?><div class="alert alert-danger"><?= htmlspecialchars($error) ?></div><?php endif; ?>[m[41m[m
+public/suppliers/create.php:39: trailing whitespace.
+[32m+[m[32m            <form action="create.php" method="POST">[m[41m[m
+public/suppliers/create.php:40: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/suppliers/create.php:41: trailing whitespace.
+[32m+[m[32m                    <label class="form-label font-weight-bold">Tên nhà cung cấp <span class="text-danger">*</span></label>[m[41m[m
+public/suppliers/create.php:42: trailing whitespace.
+[32m+[m[32m                    <input type="text" class="form-control" name="SupplierName" required>[m[41m[m
+public/suppliers/create.php:43: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/create.php:44: trailing whitespace.
+[32m+[m[32m                <div class="row">[m[41m[m
+public/suppliers/create.php:45: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-6 mb-3">[m[41m[m
+public/suppliers/create.php:46: trailing whitespace.
+[32m+[m[32m                        <label class="form-label">Người liên hệ</label>[m[41m[m
+public/suppliers/create.php:47: trailing whitespace.
+[32m+[m[32m                        <input type="text" class="form-control" name="ContactName">[m[41m[m
+public/suppliers/create.php:48: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/suppliers/create.php:49: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-6 mb-3">[m[41m[m
+public/suppliers/create.php:50: trailing whitespace.
+[32m+[m[32m                        <label class="form-label">Số điện thoại</label>[m[41m[m
+public/suppliers/create.php:51: trailing whitespace.
+[32m+[m[32m                        <input type="text" class="form-control" name="Phone">[m[41m[m
+public/suppliers/create.php:52: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/suppliers/create.php:53: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/create.php:54: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/suppliers/create.php:55: trailing whitespace.
+[32m+[m[32m                    <label class="form-label">Địa chỉ</label>[m[41m[m
+public/suppliers/create.php:56: trailing whitespace.
+[32m+[m[32m                    <input type="text" class="form-control" name="Address">[m[41m[m
+public/suppliers/create.php:57: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/create.php:58: trailing whitespace.
+[32m+[m[32m                <div class="row">[m[41m[m
+public/suppliers/create.php:59: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3"><label class="form-label">Thành phố</label><input type="text" class="form-control" name="City"></div>[m[41m[m
+public/suppliers/create.php:60: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3"><label class="form-label">Mã bưu chính</label><input type="text" class="form-control" name="PostalCode"></div><div class="col-md-4 mb-3"><label class="form-label">Quốc gia</label><input type="text" class="form-control" name="Country"></div>[m[41m[m
+public/suppliers/create.php:61: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/create.php:62: trailing whitespace.
+[32m+[m[32m                <div class="d-flex gap-2">[m[41m[m
+public/suppliers/create.php:63: trailing whitespace.
+[32m+[m[32m                    <button type="submit" class="btn btn-success">Lưu lại</button>[m[41m[m
+public/suppliers/create.php:64: trailing whitespace.
+[32m+[m[32m                    <a href="index.php" class="btn btn-secondary">Hủy</a>[m[41m[m
+public/suppliers/create.php:65: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/create.php:66: trailing whitespace.
+[32m+[m[32m            </form>[m[41m[m
+public/suppliers/create.php:67: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/suppliers/create.php:68: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/suppliers/create.php:69: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/suppliers/create.php:70: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/delete.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/suppliers/delete.php:2: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/suppliers/delete.php:3: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/delete.php:4: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: /suppliers/'); exit; }[m[41m[m
+public/suppliers/delete.php:5: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/delete.php:6: trailing whitespace.
+[32m+[m[32m$supplierID = isset($_POST['id']) ? (int) $_POST['id'] : 0;[m[41m[m
+public/suppliers/delete.php:7: trailing whitespace.
+[32m+[m[32mif ($supplierID <= 0) { header('Location: /suppliers/'); exit; }[m[41m[m
+public/suppliers/delete.php:8: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/delete.php:9: trailing whitespace.
+[32m+[m[32m$stmt = $conn->prepare("DELETE FROM suppliers WHERE SupplierID = ?");[m[41m[m
+public/suppliers/delete.php:10: trailing whitespace.
+[32m+[m[32m$stmt->bind_param('i', $supplierID);[m[41m[m
+public/suppliers/delete.php:11: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/delete.php:12: trailing whitespace.
+[32m+[m[32mif (!$stmt->execute()) {[m[41m[m
+public/suppliers/delete.php:13: trailing whitespace.
+[32m+[m[32m    $stmt->close(); $conn->close();[m[41m[m
+public/suppliers/delete.php:14: trailing whitespace.
+[32m+[m[32m    header('Location: /suppliers/index.php?error=' . urlencode('Không thể xóa nhà cung cấp này do có sản phẩm liên quan!'));[m[41m[m
+public/suppliers/delete.php:15: trailing whitespace.
+[32m+[m[32m    exit;[m[41m[m
+public/suppliers/delete.php:16: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/suppliers/delete.php:17: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/delete.php:18: trailing whitespace.
+[32m+[m[32m$stmt->close(); $conn->close();[m[41m[m
+public/suppliers/delete.php:19: trailing whitespace.
+[32m+[m[32mheader('Location: /suppliers/');[m[41m[m
+public/suppliers/edit.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/suppliers/edit.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Cập nhật Nhà cung cấp';[m[41m[m
+public/suppliers/edit.php:3: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/suppliers/edit.php:4: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:5: trailing whitespace.
+[32m+[m[32m$id = $_GET['id'] ?? null;[m[41m[m
+public/suppliers/edit.php:6: trailing whitespace.
+[32m+[m[32mif (!$id) { header("Location: index.php"); exit; }[m[41m[m
+public/suppliers/edit.php:7: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:8: trailing whitespace.
+[32m+[m[32m$stmt = $conn->prepare("SELECT * FROM suppliers WHERE SupplierID = ?");[m[41m[m
+public/suppliers/edit.php:9: trailing whitespace.
+[32m+[m[32m$stmt->bind_param("i", $id);[m[41m[m
+public/suppliers/edit.php:10: trailing whitespace.
+[32m+[m[32m$stmt->execute();[m[41m[m
+public/suppliers/edit.php:11: trailing whitespace.
+[32m+[m[32m$supplier = $stmt->get_result()->fetch_assoc();[m[41m[m
+public/suppliers/edit.php:12: trailing whitespace.
+[32m+[m[32m$stmt->close();[m[41m[m
+public/suppliers/edit.php:13: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:14: trailing whitespace.
+[32m+[m[32mif (!$supplier) { header("Location: index.php"); exit; }[m[41m[m
+public/suppliers/edit.php:15: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:16: trailing whitespace.
+[32m+[m[32m$error = '';[m[41m[m
+public/suppliers/edit.php:17: trailing whitespace.
+[32m+[m[32mif ($_SERVER['REQUEST_METHOD'] === 'POST') {[m[41m[m
+public/suppliers/edit.php:18: trailing whitespace.
+[32m+[m[32m    $supplierName = trim($_POST['SupplierName'] ?? '');[m[41m[m
+public/suppliers/edit.php:19: trailing whitespace.
+[32m+[m[32m    $contactName  = trim($_POST['ContactName'] ?? '');[m[41m[m
+public/suppliers/edit.php:20: trailing whitespace.
+[32m+[m[32m    $address      = trim($_POST['Address'] ?? '');[m[41m[m
+public/suppliers/edit.php:21: trailing whitespace.
+[32m+[m[32m    $city         = trim($_POST['City'] ?? '');[m[41m[m
+public/suppliers/edit.php:22: trailing whitespace.
+[32m+[m[32m    $postalCode   = trim($_POST['PostalCode'] ?? '');[m[41m[m
+public/suppliers/edit.php:23: trailing whitespace.
+[32m+[m[32m    $country      = trim($_POST['Country'] ?? '');[m[41m[m
+public/suppliers/edit.php:24: trailing whitespace.
+[32m+[m[32m    $phone        = trim($_POST['Phone'] ?? '');[m[41m[m
+public/suppliers/edit.php:25: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:26: trailing whitespace.
+[32m+[m[32m    if (!empty($supplierName)) {[m[41m[m
+public/suppliers/edit.php:27: trailing whitespace.
+[32m+[m[32m        $updateStmt = $conn->prepare("UPDATE suppliers SET SupplierName=?, ContactName=?, Address=?, City=?, PostalCode=?, Country=?, Phone=? WHERE SupplierID=?");[m[41m[m
+public/suppliers/edit.php:28: trailing whitespace.
+[32m+[m[32m        $updateStmt->bind_param("sssssssi", $supplierName, $contactName, $address, $city, $postalCode, $country, $phone, $id);[m[41m[m
+public/suppliers/edit.php:29: trailing whitespace.
+[32m+[m[32m        if ($updateStmt->execute()) {[m[41m[m
+public/suppliers/edit.php:30: trailing whitespace.
+[32m+[m[32m            $updateStmt->close();[m[41m[m
+public/suppliers/edit.php:31: trailing whitespace.
+[32m+[m[32m            header("Location: index.php");[m[41m[m
+public/suppliers/edit.php:32: trailing whitespace.
+[32m+[m[32m            exit;[m[41m[m
+public/suppliers/edit.php:33: trailing whitespace.
+[32m+[m[32m        } else { $error = 'Lỗi cập nhật.'; }[m[41m[m
+public/suppliers/edit.php:34: trailing whitespace.
+[32m+[m[32m        $updateStmt->close();[m[41m[m
+public/suppliers/edit.php:35: trailing whitespace.
+[32m+[m[32m    } else { $error = 'Vui lòng nhập tên nhà cung cấp!'; }[m[41m[m
+public/suppliers/edit.php:36: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+public/suppliers/edit.php:37: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:38: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/suppliers/edit.php:39: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/suppliers/edit.php:40: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/suppliers/edit.php:41: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/edit.php:42: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/suppliers/edit.php:43: trailing whitespace.
+[32m+[m[32m    <div class="card shadow-sm">[m[41m[m
+public/suppliers/edit.php:44: trailing whitespace.
+[32m+[m[32m        <div class="card-header bg-warning text-dark"><h4 class="mb-0">Sửa Nhà Cung Cấp</h4></div>[m[41m[m
+public/suppliers/edit.php:45: trailing whitespace.
+[32m+[m[32m        <div class="card-body">[m[41m[m
+public/suppliers/edit.php:46: trailing whitespace.
+[32m+[m[32m            <?php if (!empty($error)): ?><div class="alert alert-danger"><?= htmlspecialchars($error) ?></div><?php endif; ?>[m[41m[m
+public/suppliers/edit.php:47: trailing whitespace.
+[32m+[m[32m            <form action="edit.php?id=<?= htmlspecialchars($id) ?>" method="POST">[m[41m[m
+public/suppliers/edit.php:48: trailing whitespace.
+[32m+[m[32m                <div class="mb-3">[m[41m[m
+public/suppliers/edit.php:49: trailing whitespace.
+[32m+[m[32m                    <label class="form-label font-weight-bold">Tên nhà cung cấp <span class="text-danger">*</span></label>[m[41m[m
+public/suppliers/edit.php:50: trailing whitespace.
+[32m+[m[32m                    <input type="text" class="form-control" name="SupplierName" value="<?= htmlspecialchars($supplier['SupplierName']) ?>" required>[m[41m[m
+public/suppliers/edit.php:51: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/edit.php:52: trailing whitespace.
+[32m+[m[32m                <div class="row">[m[41m[m
+public/suppliers/edit.php:53: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-6 mb-3">[m[41m[m
+public/suppliers/edit.php:54: trailing whitespace.
+[32m+[m[32m                        <label class="form-label">Người liên hệ</label>[m[41m[m
+public/suppliers/edit.php:55: trailing whitespace.
+[32m+[m[32m                        <input type="text" class="form-control" name="ContactName" value="<?= htmlspecialchars($supplier['ContactName'] ?? '') ?>">[m[41m[m
+public/suppliers/edit.php:56: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/suppliers/edit.php:57: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-6 mb-3">[m[41m[m
+public/suppliers/edit.php:58: trailing whitespace.
+[32m+[m[32m                        <label class="form-label">Số điện thoại</label>[m[41m[m
+public/suppliers/edit.php:59: trailing whitespace.
+[32m+[m[32m                        <input type="text" class="form-control" name="Phone" value="<?= htmlspecialchars($supplier['Phone'] ?? '') ?>">[m[41m[m
+public/suppliers/edit.php:60: trailing whitespace.
+[32m+[m[32m                    </div>[m[41m[m
+public/suppliers/edit.php:61: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/edit.php:62: trailing whitespace.
+[32m+[m[32m                <div class="mb-3"><label class="form-label">Địa chỉ</label>[m[41m[m
+public/suppliers/edit.php:63: trailing whitespace.
+[32m+[m[32m                    <input type="text" class="form-control" name="Address" value="<?= htmlspecialchars($supplier['Address'] ?? '') ?>">[m[41m[m
+public/suppliers/edit.php:64: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/edit.php:65: trailing whitespace.
+[32m+[m[32m                <div class="row">[m[41m[m
+public/suppliers/edit.php:66: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3"><label class="form-label">Thành phố</label><input type="text" class="form-control" name="City" value="<?= htmlspecialchars($supplier['City'] ?? '') ?>"></div>[m[41m[m
+public/suppliers/edit.php:67: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3"><label class="form-label">Mã bưu chính</label><input type="text" class="form-control" name="PostalCode" value="<?= htmlspecialchars($supplier['PostalCode'] ?? '') ?>"></div>[m[41m[m
+public/suppliers/edit.php:68: trailing whitespace.
+[32m+[m[32m                    <div class="col-md-4 mb-3"><label class="form-label">Quốc gia</label><input type="text" class="form-control" name="Country" value="<?= htmlspecialchars($supplier['Country'] ?? '') ?>"></div>[m[41m[m
+public/suppliers/edit.php:69: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/edit.php:70: trailing whitespace.
+[32m+[m[32m                <div class="d-flex gap-2">[m[41m[m
+public/suppliers/edit.php:71: trailing whitespace.
+[32m+[m[32m                    <button type="submit" class="btn btn-primary">Cập nhật</button>[m[41m[m
+public/suppliers/edit.php:72: trailing whitespace.
+[32m+[m[32m                    <a href="index.php" class="btn btn-secondary">Hủy</a>[m[41m[m
+public/suppliers/edit.php:73: trailing whitespace.
+[32m+[m[32m                </div>[m[41m[m
+public/suppliers/edit.php:74: trailing whitespace.
+[32m+[m[32m            </form>[m[41m[m
+public/suppliers/edit.php:75: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/suppliers/edit.php:76: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/suppliers/edit.php:77: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/suppliers/edit.php:78: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/index.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+public/suppliers/index.php:2: trailing whitespace.
+[32m+[m[32m$pageTitle = 'Quản lý Nhà cung cấp';[m[41m[m
+public/suppliers/index.php:3: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/config/database.php';[m[41m[m
+public/suppliers/index.php:4: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/index.php:5: trailing whitespace.
+[32m+[m[32m$errorMessage = $_GET['error'] ?? '';[m[41m[m
+public/suppliers/index.php:6: trailing whitespace.
+[32m+[m[32m$sql = "SELECT SupplierID, SupplierName, ContactName, Address, City, PostalCode, Country, Phone FROM suppliers ORDER BY SupplierID DESC";[m[41m[m
+public/suppliers/index.php:7: trailing whitespace.
+[32m+[m[32m$result = $conn->query($sql);[m[41m[m
+public/suppliers/index.php:8: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/index.php:9: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/header.php';[m[41m[m
+public/suppliers/index.php:10: trailing whitespace.
+[32m+[m[32mrequire_once '/var/www/src/includes/admin/navbar.php';[m[41m[m
+public/suppliers/index.php:11: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+public/suppliers/index.php:12: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/index.php:13: trailing whitespace.
+[32m+[m[32m<div class="container mt-4">[m[41m[m
+public/suppliers/index.php:14: trailing whitespace.
+[32m+[m[32m    <div class="d-flex justify-content-between align-items-center mb-3">[m[41m[m
+public/suppliers/index.php:15: trailing whitespace.
+[32m+[m[32m        <h2>Quản lý Nhà cung cấp</h2>[m[41m[m
+public/suppliers/index.php:16: trailing whitespace.
+[32m+[m[32m        <a href="create.php" class="btn btn-primary">Thêm Nhà cung cấp</a>[m[41m[m
+public/suppliers/index.php:17: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/suppliers/index.php:18: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/index.php:19: trailing whitespace.
+[32m+[m[32m    <?php if (!empty($errorMessage)): ?>[m[41m[m
+public/suppliers/index.php:20: trailing whitespace.
+[32m+[m[32m        <div class="alert alert-danger alert-dismissible fade show" role="alert">[m[41m[m
+public/suppliers/index.php:21: trailing whitespace.
+[32m+[m[32m            <?= htmlspecialchars($errorMessage) ?>[m[41m[m
+public/suppliers/index.php:22: trailing whitespace.
+[32m+[m[32m            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>[m[41m[m
+public/suppliers/index.php:23: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+public/suppliers/index.php:24: trailing whitespace.
+[32m+[m[32m    <?php endif; ?>[m[41m[m
+public/suppliers/index.php:25: trailing whitespace.
+[32m+[m[41m[m
+public/suppliers/index.php:26: trailing whitespace.
+[32m+[m[32m    <div class="table-responsive">[m[41m[m
+public/suppliers/index.php:27: trailing whitespace.
+[32m+[m[32m        <table class="table table-striped table-hover align-middle">[m[41m[m
+public/suppliers/index.php:28: trailing whitespace.
+[32m+[m[32m            <thead class="table-dark">[m[41m[m
+public/suppliers/index.php:29: trailing whitespace.
+[32m+[m[32m                <tr>[m[41m[m
+public/suppliers/index.php:30: trailing whitespace.
+[32m+[m[32m                    <th>ID</th>[m[41m[m
+public/suppliers/index.php:31: trailing whitespace.
+[32m+[m[32m                    <th>Tên nhà cung cấp</th>[m[41m[m
+public/suppliers/index.php:32: trailing whitespace.
+[32m+[m[32m                    <th>Người liên hệ</th>[m[41m[m
+public/suppliers/index.php:33: trailing whitespace.
+[32m+[m[32m                    <th>Địa chỉ</th>[m[41m[m
+public/suppliers/index.php:34: trailing whitespace.
+[32m+[m[32m                    <th>Thành phố</th>[m[41m[m
+public/suppliers/index.php:35: trailing whitespace.
+[32m+[m[32m                    <th>Quốc gia</th>[m[41m[m
+public/suppliers/index.php:36: trailing whitespace.
+[32m+[m[32m                    <th>Điện thoại</th>[m[41m[m
+public/suppliers/index.php:37: trailing whitespace.
+[32m+[m[32m                    <th width="160">Hành động</th>[m[41m[m
+public/suppliers/index.php:38: trailing whitespace.
+[32m+[m[32m                </tr>[m[41m[m
+public/suppliers/index.php:39: trailing whitespace.
+[32m+[m[32m            </thead>[m[41m[m
+public/suppliers/index.php:40: trailing whitespace.
+[32m+[m[32m            <tbody>[m[41m[m
+public/suppliers/index.php:41: trailing whitespace.
+[32m+[m[32m                <?php if ($result && $result->num_rows > 0): ?>[m[41m[m
+public/suppliers/index.php:42: trailing whitespace.
+[32m+[m[32m                    <?php while ($row = $result->fetch_assoc()): ?>[m[41m[m
+public/suppliers/index.php:43: trailing whitespace.
+[32m+[m[32m                        <tr>[m[41m[m
+public/suppliers/index.php:44: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['SupplierID']) ?></td>[m[41m[m
+public/suppliers/index.php:45: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['SupplierName']) ?></td>[m[41m[m
+public/suppliers/index.php:46: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['ContactName'] ?? '') ?></td>[m[41m[m
+public/suppliers/index.php:47: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['Address'] ?? '') ?></td>[m[41m[m
+public/suppliers/index.php:48: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['City'] ?? '') ?></td>[m[41m[m
+public/suppliers/index.php:49: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['Country'] ?? '') ?></td>[m[41m[m
+public/suppliers/index.php:50: trailing whitespace.
+[32m+[m[32m                            <td><?= htmlspecialchars($row['Phone'] ?? '') ?></td>[m[41m[m
+public/suppliers/index.php:51: trailing whitespace.
+[32m+[m[32m                            <td>[m[41m[m
+public/suppliers/index.php:52: trailing whitespace.
+[32m+[m[32m                                <a href="edit.php?id=<?= $row['SupplierID'] ?>" class="btn btn-sm btn-warning">Sửa</a>[m[41m[m
+public/suppliers/index.php:53: trailing whitespace.
+[32m+[m[32m                                <form action="delete.php" method="POST" class="d-inline" onsubmit="return confirm('Xóa nhà cung cấp này?')">[m[41m[m
+public/suppliers/index.php:54: trailing whitespace.
+[32m+[m[32m                                    <input type="hidden" name="id" value="<?= $row['SupplierID'] ?>">[m[41m[m
+public/suppliers/index.php:55: trailing whitespace.
+[32m+[m[32m                                    <button type="submit" class="btn btn-sm btn-danger">Xóa</button>[m[41m[m
+public/suppliers/index.php:56: trailing whitespace.
+[32m+[m[32m                                </form>[m[41m[m
+public/suppliers/index.php:57: trailing whitespace.
+[32m+[m[32m                            </td>[m[41m[m
+public/suppliers/index.php:58: trailing whitespace.
+[32m+[m[32m                        </tr>[m[41m[m
+public/suppliers/index.php:59: trailing whitespace.
+[32m+[m[32m                    <?php endwhile; ?>[m[41m[m
+public/suppliers/index.php:60: trailing whitespace.
+[32m+[m[32m                <?php else: ?><tr><td colspan="8" class="text-center">Chưa có dữ liệu.</td></tr>[m[41m[m
+public/suppliers/index.php:61: trailing whitespace.
+[32m+[m[32m                <?php endif; ?>[m[41m[m
+public/suppliers/index.php:62: trailing whitespace.
+[32m+[m[32m            </tbody>[m[41m[m
+public/suppliers/index.php:63: trailing whitespace.
+[32m+[m[32m        </table>[m[41m[m
+public/suppliers/index.php:64: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+public/suppliers/index.php:65: trailing whitespace.
+[32m+[m[32m</div>[m[41m[m
+public/suppliers/index.php:66: trailing whitespace.
+[32m+[m[41m[m
+src/config/database.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+src/config/database.php:2: trailing whitespace.
+[32m+[m[41m[m
+src/config/database.php:3: trailing whitespace.
+[32m+[m[32m$host = 'db';[m[41m[m
+src/config/database.php:4: trailing whitespace.
+[32m+[m[32m$database = getenv('MYSQL_DATABASE');[m[41m[m
+src/config/database.php:5: trailing whitespace.
+[32m+[m[32m$username = getenv('MYSQL_USER');[m[41m[m
+src/config/database.php:6: trailing whitespace.
+[32m+[m[32m$password = getenv('MYSQL_PASSWORD');[m[41m[m
+src/config/database.php:7: trailing whitespace.
+[32m+[m[41m[m
+src/config/database.php:8: trailing whitespace.
+[32m+[m[32m$conn = new mysqli([m[41m[m
+src/config/database.php:9: trailing whitespace.
+[32m+[m[32m    $host,[m[41m[m
+src/config/database.php:10: trailing whitespace.
+[32m+[m[32m    $username,[m[41m[m
+src/config/database.php:11: trailing whitespace.
+[32m+[m[32m    $password,[m[41m[m
+src/config/database.php:12: trailing whitespace.
+[32m+[m[32m    $database[m[41m[m
+src/config/database.php:13: trailing whitespace.
+[32m+[m[32m);[m[41m[m
+src/config/database.php:14: trailing whitespace.
+[32m+[m[41m[m
+src/config/database.php:15: trailing whitespace.
+[32m+[m[32mif ($conn->connect_error) {[m[41m[m
+src/config/database.php:16: trailing whitespace.
+[32m+[m[32m    die('Kết nối cơ sở dữ liệu thất bại: ' . $conn->connect_error);[m[41m[m
+src/config/database.php:17: trailing whitespace.
+[32m+[m[32m}[m[41m[m
+src/config/database.php:18: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:1: trailing whitespace.
+[32m+[m[32m<nav class="navbar navbar-expand-lg bg-dark navbar-dark">[m[41m[m
+src/includes/navbar.php:2: trailing whitespace.
+[32m+[m[32m    <div class="container">[m[41m[m
+src/includes/navbar.php:3: trailing whitespace.
+[32m+[m[32m        <a class="navbar-brand" href="/">Sales Management</a>[m[41m[m
+src/includes/navbar.php:4: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:5: trailing whitespace.
+[32m+[m[32m        <button[m[41m[m
+src/includes/navbar.php:6: trailing whitespace.
+[32m+[m[32m            class="navbar-toggler"[m[41m[m
+src/includes/navbar.php:7: trailing whitespace.
+[32m+[m[32m            type="button"[m[41m[m
+src/includes/navbar.php:8: trailing whitespace.
+[32m+[m[32m            data-bs-toggle="collapse"[m[41m[m
+src/includes/navbar.php:9: trailing whitespace.
+[32m+[m[32m            data-bs-target="#mainNavbar"[m[41m[m
+src/includes/navbar.php:10: trailing whitespace.
+[32m+[m[32m        >[m[41m[m
+src/includes/navbar.php:11: trailing whitespace.
+[32m+[m[32m            <span class="navbar-toggler-icon"></span>[m[41m[m
+src/includes/navbar.php:12: trailing whitespace.
+[32m+[m[32m        </button>[m[41m[m
+src/includes/navbar.php:13: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:14: trailing whitespace.
+[32m+[m[32m        <div class="collapse navbar-collapse" id="mainNavbar">[m[41m[m
+src/includes/navbar.php:15: trailing whitespace.
+[32m+[m[32m            <ul class="navbar-nav">[m[41m[m
+src/includes/navbar.php:16: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:17: trailing whitespace.
+[32m+[m[32m                <li class="nav-item">[m[41m[m
+src/includes/navbar.php:18: trailing whitespace.
+[32m+[m[32m                    <a class="nav-link" href="/">Trang chủ</a>[m[41m[m
+src/includes/navbar.php:19: trailing whitespace.
+[32m+[m[32m                </li>[m[41m[m
+src/includes/navbar.php:20: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:21: trailing whitespace.
+[32m+[m[32m                <li class="nav-item">[m[41m[m
+src/includes/navbar.php:22: trailing whitespace.
+[32m+[m[32m                    <a class="nav-link" href="/admin/categories/">[m[41m[m
+src/includes/navbar.php:23: trailing whitespace.
+[32m+[m[32m                        Danh mục[m[41m[m
+src/includes/navbar.php:24: trailing whitespace.
+[32m+[m[32m                    </a>[m[41m[m
+src/includes/navbar.php:25: trailing whitespace.
+[32m+[m[32m                </li>[m[41m[m
+src/includes/navbar.php:26: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:27: trailing whitespace.
+[32m+[m[32m                <li class="nav-item">[m[41m[m
+src/includes/navbar.php:28: trailing whitespace.
+[32m+[m[32m                    <a class="nav-link" href="#">[m[41m[m
+src/includes/navbar.php:29: trailing whitespace.
+[32m+[m[32m                        Sản phẩm[m[41m[m
+src/includes/navbar.php:30: trailing whitespace.
+[32m+[m[32m                    </a>[m[41m[m
+src/includes/navbar.php:31: trailing whitespace.
+[32m+[m[32m                </li>[m[41m[m
+src/includes/navbar.php:32: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:33: trailing whitespace.
+[32m+[m[32m                <li class="nav-item">[m[41m[m
+src/includes/navbar.php:34: trailing whitespace.
+[32m+[m[32m                    <a class="nav-link" href="#">[m[41m[m
+src/includes/navbar.php:35: trailing whitespace.
+[32m+[m[32m                        Đơn hàng[m[41m[m
+src/includes/navbar.php:36: trailing whitespace.
+[32m+[m[32m                    </a>[m[41m[m
+src/includes/navbar.php:37: trailing whitespace.
+[32m+[m[32m                </li>[m[41m[m
+src/includes/navbar.php:38: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:39: trailing whitespace.
+[32m+[m[32m            </ul>[m[41m[m
+src/includes/navbar.php:40: trailing whitespace.
+[32m+[m[32m        </div>[m[41m[m
+src/includes/navbar.php:41: trailing whitespace.
+[32m+[m[32m    </div>[m[41m[m
+src/includes/navbar.php:42: trailing whitespace.
+[32m+[m[32m</nav>[m[41m[m
+src/includes/navbar.php:43: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:44: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:45: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:46: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:47: trailing whitespace.
+[32m+[m[41m[m
+src/includes/navbar.php:48: trailing whitespace.
+[32m+[m[32m</body>[m[41m[m
+src/index.php:1: trailing whitespace.
+[32m+[m[32m<?php[m[41m[m
+src/index.php:2: trailing whitespace.
+[32m+[m[32m$appName = "Hệ thống quản lý bán hàng";[m[41m[m
+src/index.php:3: trailing whitespace.
+[32m+[m[32m?>[m[41m[m
+src/index.php:4: trailing whitespace.
+[32m+[m[41m[m
+src/index.php:5: trailing whitespace.
+[32m+[m[32m<!doctype html>[m[41m[m
+src/index.php:6: trailing whitespace.
+[32m+[m[32m<html lang="vi">[m[41m[m
+src/index.php:7: trailing whitespace.
+[32m+[m[32m<head>[m[41m[m
+src/index.php:8: trailing whitespace.
+[32m+[m[32m    <meta charset="utf-8">[m[41m[m
+src/index.php:9: trailing whitespace.
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1">[m[41m[m
+src/index.php:10: trailing whitespace.
+[32m+[m[32m    <title><?= $appName ?></title>[m[41m[m
+src/index.php:11: trailing whitespace.
+[32m+[m[32m</head>[m[41m[m
+src/index.php:12: trailing whitespace.
+[32m+[m[32m<body>[m[41m[m
+src/index.php:13: trailing whitespace.
+[32m+[m[41m[m
+src/index.php:14: trailing whitespace.
+[32m+[m[32m    <h1><?= $appName ?></h1>[m[41m[m
+src/index.php:15: trailing whitespace.
+[32m+[m[32m    <p>Ứng dụng PHP đang hoạt động.</p>[m[41m[m
+src/index.php:16: trailing whitespace.
+[32m+[m[41m[m
+src/index.php:17: trailing whitespace.
+[32m+[m[32m</body>[m[41m[m

@@ -1,0 +1,1 @@
+echo ^<?php "<h1? TEST THANH CONG<h1>";
