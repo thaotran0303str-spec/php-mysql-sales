@@ -37,6 +37,7 @@ $pageTitle = 'Sản phẩm';
 require_once '/var/www/src/includes/frontend/header.php';
 require_once '/var/www/src/includes/frontend/navbar.php';
 ?>
+
 <main class="container py-5">
 
     <div class="mb-4">
@@ -173,5 +174,6 @@ require_once '/var/www/src/includes/frontend/navbar.php';
 <?php
 
 $result->free();
-
+require_once '/var/www/src/config/session.php';
+require_once '/var/www/src/config/database.php';
 require_once '/var/www/src/includes/frontend/footer.php';

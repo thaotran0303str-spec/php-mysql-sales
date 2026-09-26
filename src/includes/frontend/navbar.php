@@ -6,14 +6,23 @@
             Sales Management
         </a>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#frontendNavbar"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+       <div class="d-flex gap-2">
+
+    <a
+        class="btn btn-outline-light btn-sm"
+        href="/cart.php"
+    >
+        Giỏ hàng (<?= (int) $cartCount ?>)
+    </a>
+
+    <a
+        class="btn btn-outline-light btn-sm"
+        href="/admin/"
+    >
+        Quản trị
+    </a>
+
+</div>
 
         <div
             class="collapse navbar-collapse"
